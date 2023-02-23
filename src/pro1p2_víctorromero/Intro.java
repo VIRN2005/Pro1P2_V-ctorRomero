@@ -24,7 +24,7 @@ public class Intro extends javax.swing.JFrame {
         initComponents();
         this.pack();
         this.setLocationRelativeTo(null);
-
+        
     }
 
     /**
@@ -37,79 +37,83 @@ public class Intro extends javax.swing.JFrame {
     private void initComponents() {
 
         EA_Presents = new javax.swing.JFrame();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        Presents = new javax.swing.JLabel();
+        PresentsBlack = new javax.swing.JLabel();
+        EA_VR = new javax.swing.JLabel();
+        EA_VRBlack = new javax.swing.JLabel();
+        PressBlack = new javax.swing.JLabel();
+        Press = new javax.swing.JLabel();
+        PvZ_Logo = new javax.swing.JLabel();
         Lanzaguisantes = new javax.swing.JLabel();
         Girasol = new javax.swing.JLabel();
         GamePlay = new javax.swing.JLabel();
         Main_Screen = new javax.swing.JFrame();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        Adventure = new javax.swing.JLabel();
+        Tutorial = new javax.swing.JLabel();
+        Survival = new javax.swing.JLabel();
+        Exit = new javax.swing.JLabel();
+        jt_Name = new javax.swing.JTextField();
+        RickRoll = new javax.swing.JLabel();
+        MainScreen = new javax.swing.JLabel();
+        Tutorial1 = new javax.swing.JLabel();
+        VR_Presents = new javax.swing.JLabel();
+        VR_PresentsBlack = new javax.swing.JLabel();
+        VR = new javax.swing.JLabel();
         TapToStart = new javax.swing.JLabel();
         Pantalla = new javax.swing.JLabel();
 
         EA_Presents.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Presents");
-        EA_Presents.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 190, 60));
+        Presents.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
+        Presents.setForeground(new java.awt.Color(255, 255, 255));
+        Presents.setText("Presents");
+        EA_Presents.getContentPane().add(Presents, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 190, 60));
 
-        jLabel8.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Presents");
-        EA_Presents.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 190, 80));
+        PresentsBlack.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
+        PresentsBlack.setForeground(new java.awt.Color(0, 0, 0));
+        PresentsBlack.setText("Presents");
+        EA_Presents.getContentPane().add(PresentsBlack, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 190, 80));
 
-        jLabel1.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Ghostphobia", 1, 80)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("EA & VR ");
-        jLabel1.setToolTipText("");
-        jLabel1.setMaximumSize(new java.awt.Dimension(780, 550));
-        jLabel1.setMinimumSize(new java.awt.Dimension(780, 550));
-        EA_Presents.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 420, 70));
+        EA_VR.setBackground(new java.awt.Color(255, 0, 0));
+        EA_VR.setFont(new java.awt.Font("Ghostphobia", 1, 80)); // NOI18N
+        EA_VR.setForeground(new java.awt.Color(255, 153, 0));
+        EA_VR.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EA_VR.setText("EA & VR ");
+        EA_VR.setToolTipText("");
+        EA_VR.setMaximumSize(new java.awt.Dimension(780, 550));
+        EA_VR.setMinimumSize(new java.awt.Dimension(780, 550));
+        EA_Presents.getContentPane().add(EA_VR, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 420, 70));
 
-        jLabel5.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Ghostphobia", 1, 80)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("EA & VR ");
-        jLabel5.setToolTipText("");
-        EA_Presents.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 400, 70));
+        EA_VRBlack.setBackground(new java.awt.Color(255, 0, 0));
+        EA_VRBlack.setFont(new java.awt.Font("Ghostphobia", 1, 80)); // NOI18N
+        EA_VRBlack.setForeground(new java.awt.Color(0, 0, 0));
+        EA_VRBlack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EA_VRBlack.setText("EA & VR ");
+        EA_VRBlack.setToolTipText("");
+        EA_Presents.getContentPane().add(EA_VRBlack, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 400, 70));
 
-        jLabel7.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel7.setFont(new java.awt.Font("Ghostphobia", 1, 40)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("PRESS TO CONTINUE");
-        EA_Presents.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 370, 50));
+        PressBlack.setBackground(new java.awt.Color(0, 255, 0));
+        PressBlack.setFont(new java.awt.Font("Ghostphobia", 1, 40)); // NOI18N
+        PressBlack.setForeground(new java.awt.Color(0, 0, 0));
+        PressBlack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PressBlack.setText("PRESS TO CONTINUE");
+        EA_Presents.getContentPane().add(PressBlack, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 370, 50));
 
-        jLabel9.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel9.setFont(new java.awt.Font("Ghostphobia", 1, 40)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("PRESS TO CONTINUE");
-        EA_Presents.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 380, 50));
+        Press.setBackground(new java.awt.Color(0, 255, 0));
+        Press.setFont(new java.awt.Font("Ghostphobia", 1, 40)); // NOI18N
+        Press.setForeground(new java.awt.Color(255, 255, 0));
+        Press.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Press.setText("PRESS TO CONTINUE");
+        EA_Presents.getContentPane().add(Press, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 380, 50));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Plants_vs_Zombies_logo.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        PvZ_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Plants_vs_Zombies_logo.png"))); // NOI18N
+        PvZ_Logo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PvZ_Logo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                PvZ_LogoMouseClicked(evt);
             }
         });
-        EA_Presents.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 410, 240));
+        EA_Presents.getContentPane().add(PvZ_Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 410, 240));
 
         Lanzaguisantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION2_LanzaGuisantes.gif"))); // NOI18N
         EA_Presents.getContentPane().add(Lanzaguisantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 30, 590, 530));
@@ -122,60 +126,75 @@ public class Intro extends javax.swing.JFrame {
         EA_Presents.getContentPane().add(GamePlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 560));
 
         Main_Screen.setMaximumSize(new java.awt.Dimension(700, 500));
-        Main_Screen.setPreferredSize(new java.awt.Dimension(710, 560));
+        Main_Screen.setPreferredSize(new java.awt.Dimension(800, 600));
         Main_Screen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(55, 47, 0));
-        jTextField1.setFont(new java.awt.Font("Ghostphobia", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        Main_Screen.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 220, 30));
+        Adventure.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Main_Screen.getContentPane().add(Adventure, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 260, 70));
 
-        jLabel13.setText("jLabel13");
-        Main_Screen.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 230, 50));
+        Tutorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Main_Screen.getContentPane().add(Tutorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 260, 70));
 
-        jLabel12.setBackground(new java.awt.Color(105, 99, 67));
-        jLabel12.setFont(new java.awt.Font("Ghostphobia", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("If this is not you... click here");
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
-        jLabel12.setOpaque(true);
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+        Survival.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Main_Screen.getContentPane().add(Survival, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 220, 70));
+
+        Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
+                ExitMouseClicked(evt);
             }
         });
-        Main_Screen.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 220, 30));
+        Main_Screen.getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 160, 50));
 
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/MainScreen3.jpg"))); // NOI18N
-        Main_Screen.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 530));
+        jt_Name.setBackground(new java.awt.Color(55, 47, 0));
+        jt_Name.setFont(new java.awt.Font("Ghostphobia", 0, 18)); // NOI18N
+        jt_Name.setForeground(new java.awt.Color(255, 255, 255));
+        jt_Name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jt_Name.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jt_Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_NameActionPerformed(evt);
+            }
+        });
+        Main_Screen.getContentPane().add(jt_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 240, 30));
+
+        RickRoll.setBackground(new java.awt.Color(105, 99, 67));
+        RickRoll.setFont(new java.awt.Font("Ghostphobia", 0, 18)); // NOI18N
+        RickRoll.setForeground(new java.awt.Color(204, 204, 0));
+        RickRoll.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RickRoll.setText("If this is not you... click here");
+        RickRoll.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        RickRoll.setOpaque(true);
+        RickRoll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RickRollMouseClicked(evt);
+            }
+        });
+        Main_Screen.getContentPane().add(RickRoll, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 250, 30));
+
+        MainScreen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MainScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/MainScreen5.jpg"))); // NOI18N
+        Main_Screen.getContentPane().add(MainScreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 590));
+        Main_Screen.getContentPane().add(Tutorial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 260, 70));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plants vs Zombies (VR Edition)");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel10.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Presents");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
+        VR_Presents.setBackground(new java.awt.Color(0, 0, 0));
+        VR_Presents.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
+        VR_Presents.setForeground(new java.awt.Color(255, 255, 255));
+        VR_Presents.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        VR_Presents.setText("Presents");
+        getContentPane().add(VR_Presents, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
 
-        jLabel3.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Presents");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
+        VR_PresentsBlack.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
+        VR_PresentsBlack.setForeground(new java.awt.Color(0, 0, 0));
+        VR_PresentsBlack.setText("Presents");
+        getContentPane().add(VR_PresentsBlack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/VRLogo.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 160, 90));
+        VR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/VRLogo.png"))); // NOI18N
+        getContentPane().add(VR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 160, 90));
 
         TapToStart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/TapToStart2.jpg"))); // NOI18N
         TapToStart.setText("jLabel3");
@@ -202,14 +221,14 @@ public class Intro extends javax.swing.JFrame {
         EA_Presents.setLocationRelativeTo(this);
     }//GEN-LAST:event_TapToStartMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void PvZ_LogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PvZ_LogoMouseClicked
         EA_Presents.setVisible(false);
         Main_Screen.setVisible(true);
         Main_Screen.pack();
         Main_Screen.setLocationRelativeTo(this);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_PvZ_LogoMouseClicked
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+    private void RickRollMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RickRollMouseClicked
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
             try {
                 try {
@@ -221,11 +240,15 @@ public class Intro extends javax.swing.JFrame {
                 Logger.getLogger(Intro.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_jLabel12MouseClicked
+    }//GEN-LAST:event_RickRollMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jt_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_NameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jt_NameActionPerformed
+
+    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ExitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -261,32 +284,36 @@ public class Intro extends javax.swing.JFrame {
             }
         });
     }
-
+    
     private void abrir_Intro() {
-
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Adventure;
     private javax.swing.JFrame EA_Presents;
+    private javax.swing.JLabel EA_VR;
+    private javax.swing.JLabel EA_VRBlack;
+    private javax.swing.JLabel Exit;
     private javax.swing.JLabel GamePlay;
     private javax.swing.JLabel Girasol;
     private javax.swing.JLabel Lanzaguisantes;
+    private javax.swing.JLabel MainScreen;
     private javax.swing.JFrame Main_Screen;
     private javax.swing.JLabel Pantalla;
+    private javax.swing.JLabel Presents;
+    private javax.swing.JLabel PresentsBlack;
+    private javax.swing.JLabel Press;
+    private javax.swing.JLabel PressBlack;
+    private javax.swing.JLabel PvZ_Logo;
+    private javax.swing.JLabel RickRoll;
+    private javax.swing.JLabel Survival;
     private javax.swing.JLabel TapToStart;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel Tutorial;
+    private javax.swing.JLabel Tutorial1;
+    private javax.swing.JLabel VR;
+    private javax.swing.JLabel VR_Presents;
+    private javax.swing.JLabel VR_PresentsBlack;
+    private javax.swing.JTextField jt_Name;
     // End of variables declaration//GEN-END:variables
 }
