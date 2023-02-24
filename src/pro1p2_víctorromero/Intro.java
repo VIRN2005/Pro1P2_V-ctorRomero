@@ -24,7 +24,7 @@ public class Intro extends javax.swing.JFrame {
         initComponents();
         this.pack();
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -57,14 +57,16 @@ public class Intro extends javax.swing.JFrame {
         MainScreen = new javax.swing.JLabel();
         Tutorial1 = new javax.swing.JLabel();
         Tutorial_Game = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        SunBoard = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        PanelSup_Plants = new javax.swing.JPanel();
+        PanelInf_Plants = new javax.swing.JPanel();
+        Tutorial_Background = new javax.swing.JLabel();
         VR_Presents = new javax.swing.JLabel();
         VR_PresentsBlack = new javax.swing.JLabel();
         VR = new javax.swing.JLabel();
@@ -124,7 +126,7 @@ public class Intro extends javax.swing.JFrame {
         });
         EA_Presents.getContentPane().add(PvZ_Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 410, 240));
 
-        Lanzaguisantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION2_LanzaGuisantes.gif"))); // NOI18N
+        Lanzaguisantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION_LanzaGuisantes.gif"))); // NOI18N
         EA_Presents.getContentPane().add(Lanzaguisantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 30, 590, 530));
 
         Girasol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Girasol.gif"))); // NOI18N
@@ -142,6 +144,11 @@ public class Intro extends javax.swing.JFrame {
         Main_Screen.getContentPane().add(Adventure, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 260, 70));
 
         Tutorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Tutorial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TutorialMouseClicked(evt);
+            }
+        });
         Main_Screen.getContentPane().add(Tutorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 260, 70));
 
         Survival.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -188,13 +195,26 @@ public class Intro extends javax.swing.JFrame {
 
         Tutorial_Game.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/PeaShooter.PNG"))); // NOI18N
+        Tutorial_Game.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 59, 100, 70));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION3_LanzaGuisantes.gif"))); // NOI18N
+        Tutorial_Game.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 110, 110));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        Tutorial_Game.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 220, 120, 130));
+
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Sun2.png"))); // NOI18N
         Tutorial_Game.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
 
-        jPanel4.setBackground(new java.awt.Color(55, 47, 0));
-        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        SunBoard.setBackground(new java.awt.Color(55, 47, 0));
+        SunBoard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        SunBoard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 153));
         jTextField1.setFont(new java.awt.Font("Ghostphobia", 1, 45)); // NOI18N
@@ -206,27 +226,24 @@ public class Intro extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 90, 40));
+        SunBoard.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 90, 40));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 153));
         jLabel2.setOpaque(true);
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 10, 110, 40));
+        SunBoard.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 10, 110, 40));
 
-        Tutorial_Game.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 170, 60));
+        Tutorial_Game.getContentPane().add(SunBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 170, 60));
 
-        jPanel3.setBackground(new java.awt.Color(55, 47, 0));
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        Tutorial_Game.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 90, 500));
+        PanelSup_Plants.setBackground(new java.awt.Color(55, 47, 0));
+        PanelSup_Plants.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        Tutorial_Game.getContentPane().add(PanelSup_Plants, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 100, 500));
 
-        jPanel2.setBackground(new java.awt.Color(86, 86, 2));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Tutorial_Game.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 110, 520));
+        PanelInf_Plants.setBackground(new java.awt.Color(86, 86, 2));
+        PanelInf_Plants.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Tutorial_Game.getContentPane().add(PanelInf_Plants, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 120, 520));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Tutorial_Game.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 989, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Backyard_Tutorial.jpg"))); // NOI18N
-        Tutorial_Game.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 602));
+        Tutorial_Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Backyard_Tutorial.jpg"))); // NOI18N
+        Tutorial_Game.getContentPane().add(Tutorial_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 602));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plants vs Zombies (VR Edition)");
@@ -305,6 +322,13 @@ public class Intro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void TutorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TutorialMouseClicked
+        Main_Screen.setVisible(false);
+        Tutorial_Game.setVisible(true);
+        Tutorial_Game.pack();
+        Tutorial_Game.setLocationRelativeTo(this);
+    }//GEN-LAST:event_TutorialMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -339,9 +363,9 @@ public class Intro extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private void abrir_Intro() {
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -355,6 +379,8 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel Lanzaguisantes;
     private javax.swing.JLabel MainScreen;
     private javax.swing.JFrame Main_Screen;
+    private javax.swing.JPanel PanelInf_Plants;
+    private javax.swing.JPanel PanelSup_Plants;
     private javax.swing.JLabel Pantalla;
     private javax.swing.JLabel Presents;
     private javax.swing.JLabel PresentsBlack;
@@ -362,10 +388,12 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel PressBlack;
     private javax.swing.JLabel PvZ_Logo;
     private javax.swing.JLabel RickRoll;
+    private javax.swing.JPanel SunBoard;
     private javax.swing.JLabel Survival;
     private javax.swing.JLabel TapToStart;
     private javax.swing.JLabel Tutorial;
     private javax.swing.JLabel Tutorial1;
+    private javax.swing.JLabel Tutorial_Background;
     private javax.swing.JFrame Tutorial_Game;
     private javax.swing.JLabel VR;
     private javax.swing.JLabel VR_Presents;
@@ -373,10 +401,8 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jt_Name;
     // End of variables declaration//GEN-END:variables
