@@ -58,8 +58,16 @@ public class Intro extends javax.swing.JFrame {
         MainScreen = new javax.swing.JLabel();
         Tutorial1 = new javax.swing.JLabel();
         Tutorial_Game = new javax.swing.JFrame();
+        LG2 = new javax.swing.JLabel();
+        LG3 = new javax.swing.JLabel();
+        LG4 = new javax.swing.JLabel();
+        LG5 = new javax.swing.JLabel();
+        LG6 = new javax.swing.JLabel();
+        LG7 = new javax.swing.JLabel();
+        LG8 = new javax.swing.JLabel();
+        LG9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        LG1 = new javax.swing.JLabel();
         Panel_Lanzaguisantes = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -199,6 +207,20 @@ public class Intro extends javax.swing.JFrame {
 
         Tutorial_Game.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        LG2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                LG2MouseReleased(evt);
+            }
+        });
+        Tutorial_Game.getContentPane().add(LG2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 120, 130));
+        Tutorial_Game.getContentPane().add(LG3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 120, 130));
+        Tutorial_Game.getContentPane().add(LG4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 120, 130));
+        Tutorial_Game.getContentPane().add(LG5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, 120, 130));
+        Tutorial_Game.getContentPane().add(LG6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 120, 130));
+        Tutorial_Game.getContentPane().add(LG7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 120, 130));
+        Tutorial_Game.getContentPane().add(LG8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 120, 130));
+        Tutorial_Game.getContentPane().add(LG9, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 250, 120, 130));
+
         jPanel1.setOpaque(false);
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -206,8 +228,8 @@ public class Intro extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(jLabel9);
+        LG1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(LG1);
 
         Tutorial_Game.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 110, 140));
 
@@ -380,12 +402,24 @@ public class Intro extends javax.swing.JFrame {
 
     private void Panel_LanzaguisantesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_LanzaguisantesMouseReleased
         Panel_Lanzaguisantes.setLocation(40, 59);
-        jLabel9.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+        LG1.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG2.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG3.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG4.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG5.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG6.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG7.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG8.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+//        LG9.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
     }//GEN-LAST:event_Panel_LanzaguisantesMouseReleased
 
     private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
 //        jLabel9.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
     }//GEN-LAST:event_jPanel1MouseEntered
+
+    private void LG2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LG2MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LG2MouseReleased
 
     /**
      * @param args the command line arguments
@@ -438,6 +472,15 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel Exit;
     private javax.swing.JLabel GamePlay;
     private javax.swing.JLabel Girasol;
+    private javax.swing.JLabel LG1;
+    private javax.swing.JLabel LG2;
+    private javax.swing.JLabel LG3;
+    private javax.swing.JLabel LG4;
+    private javax.swing.JLabel LG5;
+    private javax.swing.JLabel LG6;
+    private javax.swing.JLabel LG7;
+    private javax.swing.JLabel LG8;
+    private javax.swing.JLabel LG9;
     private javax.swing.JLabel Lanzaguisantes;
     private javax.swing.JLabel MainScreen;
     private javax.swing.JFrame Main_Screen;
@@ -466,7 +509,6 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jt_Name;
