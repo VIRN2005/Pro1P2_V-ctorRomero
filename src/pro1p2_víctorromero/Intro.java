@@ -402,6 +402,9 @@ public class Intro extends javax.swing.JFrame {
 
     private void Panel_LanzaguisantesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_LanzaguisantesMouseReleased
         Panel_Lanzaguisantes.setLocation(40, 59);
+        if (LG1.setLocation(xMouse, yMouse) == LG1) {
+            LG1.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+        }
         LG1.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
 //        LG2.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
 //        LG3.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
