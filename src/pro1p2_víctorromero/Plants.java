@@ -2,10 +2,10 @@ package pro1p2_víctorromero;
 
 public class Plants {
 
-    private String name;
-    private int sunCost;
-    private int health;
-    private int attackPower;
+    protected String name;
+    protected int sunCost;
+    protected int health;
+    protected int attackPower;
 
     public Plants() {
     }
