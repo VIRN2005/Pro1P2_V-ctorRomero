@@ -29,7 +29,7 @@ public class GameManager_Threads implements Runnable {
                 try {
                     Thread.sleep(2);
                 } catch (Exception e) {
-                    System.out.println("pito");
+                    
                 }
             }
             label.setLocation(390, 290);
