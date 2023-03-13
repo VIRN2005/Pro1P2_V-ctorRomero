@@ -8,6 +8,7 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -635,15 +636,15 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.setLocationRelativeTo(this);
 
         DisparoLanzaguisantes gm = new DisparoLanzaguisantes(jLabel5);
-        Thread t = new Thread(gm);
+        t = new Thread(gm);
         t.start();
 
         GeneradorSol gs = new GeneradorSol(Sol, true);
-        Thread t2 = new Thread(gs);
+        t2 = new Thread(gs);
         t2.start();
 
         MoveZombies mz = new MoveZombies(ZombieTut);
-        Thread t3 = new Thread(mz);
+        t3 = new Thread(mz);
         t3.start();
     }//GEN-LAST:event_TutorialMouseClicked
 
@@ -666,18 +667,19 @@ public class Intro extends javax.swing.JFrame {
 
     private void Panel_LanzaguisantesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_LanzaguisantesMouseReleased
         Panel_Lanzaguisantes.setLocation(40, 59);
-        //        if (LG1.setLocation(xMouse, yMouse) == LG1) {
-        //            LG1.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
-        //        }
-        // LG1.setIcon(new ImageIcon("./Images\\ANIMACION3_LanzaGuisantes.gif"));
 
         if (Panel_Lanzaguisantes.isEnabled()) {
             Panel_Lanzaguisantes.setLocation(40, 59);
-
-            cantSoles -= 100;
-            jLabel1.setText(cantSoles + "");
-            VerifPlants();
-            LG1.setIcon(new ImageIcon("./Images\\ANIMACION3_LanzaGuisantes.gif"));
+            if (cantSoles > 0) {
+                cantSoles -= 100;
+                jLabel1.setText(cantSoles + "");
+                VerifPlants();
+                LG1.setIcon(new ImageIcon("./Images\\ANIMACION3_LanzaGuisantes.gif"));
+                LG3.setIcon(new ImageIcon("./Images\\ANIMACION3_LanzaGuisantes.gif"));
+            }
+            if (cantSoles <= 100) {
+                Panel_Lanzaguisantes.isOpaque();
+            }
         }
 //        LG2.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
 //        LG3.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
@@ -713,7 +715,7 @@ public class Intro extends javax.swing.JFrame {
     private void Panel_Lanzaguisantes2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes2MouseReleased
         Panel_Lanzaguisantes2.setLocation(40, 59);
 
-        LG10.setIcon(new ImageIcon("C:\\Víctor\\- UNITEC\\Ing. Sistemas\\2023 - Periodo 1\\Programación II\\Proyecto\\Pro1P2_VíctorRomero\\src\\pro1p2_víctorromero\\Images\\ANIMACION3_LanzaGuisantes.gif"));
+        LG10.setIcon(new ImageIcon("./Images\\ANIMACION3_LanzaGuisantes.gif"));
     }//GEN-LAST:event_Panel_Lanzaguisantes2MouseReleased
 
     private void Panel_Lanzaguisantes3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes3MouseDragged
@@ -756,19 +758,6 @@ public class Intro extends javax.swing.JFrame {
         Pause_Screen.setVisible(true);
         Pause_Screen.pack();
         Pause_Screen.setLocationRelativeTo(this);
-
-        DisparoLanzaguisantes gm = new DisparoLanzaguisantes(jLabel5);
-        Thread t = new Thread(gm);
-        t.suspend();
-
-        GeneradorSol gs = new GeneradorSol(Sol, true);
-        Thread t2 = new Thread(gs);
-        t2.suspend();
-
-        MoveZombies mz = new MoveZombies(ZombieTut);
-        Thread t3 = new Thread(mz);
-        t3.suspend();
-
     }//GEN-LAST:event_PauseMouseClicked
 
     private void ResumeGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResumeGameMouseClicked
@@ -827,6 +816,15 @@ public class Intro extends javax.swing.JFrame {
     private int yMouse;
     private int cantSoles = 0;
 
+    DisparoLanzaguisantes gm;
+    Thread t = new Thread(gm);
+
+    GeneradorSol gs;
+    Thread t2 = new Thread(gs);
+
+    MoveZombies mz;
+    Thread t3 = new Thread(mz);
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Adventure;

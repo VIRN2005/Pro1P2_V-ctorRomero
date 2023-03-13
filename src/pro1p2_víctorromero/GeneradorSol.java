@@ -29,7 +29,7 @@ public class GeneradorSol implements Runnable {
             int y = rand.nextInt(500);
 
             try {
-                Thread.sleep(6000);
+                Thread.sleep(4000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(GeneradorSol.class.getName()).log(Level.SEVERE, null, ex);
             }
