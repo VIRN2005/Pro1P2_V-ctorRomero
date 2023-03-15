@@ -2,15 +2,21 @@ package pro1p2_víctorromero;
 
 import javax.swing.JLabel;
 
-public class MoveZombies implements Runnable{
+public class MoveZombies implements Runnable {
 
     private JLabel label;
+    private Zombies zombie;
+    int x;
+    int y;
 
     public MoveZombies() {
     }
 
-    public MoveZombies(JLabel label) {
+    public MoveZombies(JLabel label, int x, int y) {
         this.label = label;
+        this.zombie = zombie;
+        this.x = x;
+        this.y = y;
     }
 
     public JLabel getLabel() {
@@ -21,6 +27,19 @@ public class MoveZombies implements Runnable{
         this.label = label;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    
     @Override
     public void run() {
         while (true) {
@@ -35,5 +54,4 @@ public class MoveZombies implements Runnable{
             label.setLocation(960, 240);
         }
     }
-
 }

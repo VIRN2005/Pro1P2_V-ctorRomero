@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -123,6 +124,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game = new javax.swing.JFrame();
         Pause = new javax.swing.JButton();
         Sol = new javax.swing.JLabel();
+        LG1 = new javax.swing.JLabel();
         LG2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LG3 = new javax.swing.JLabel();
@@ -132,8 +134,6 @@ public class Intro extends javax.swing.JFrame {
         LG7 = new javax.swing.JLabel();
         LG8 = new javax.swing.JLabel();
         LG9 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        LG1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         Panel_Lanzaguisantes = new javax.swing.JLabel();
         ZombieTut = new javax.swing.JLabel();
@@ -456,6 +456,17 @@ public class Intro extends javax.swing.JFrame {
         });
         Tutorial_Game.getContentPane().add(Sol, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
 
+        LG1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LG1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LG1MouseEntered(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                LG1MouseReleased(evt);
+            }
+        });
+        Tutorial_Game.getContentPane().add(LG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 110, 130));
+
         LG2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LG2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION3_LanzaGuisantes.gif"))); // NOI18N
         Tutorial_Game.getContentPane().add(LG2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 120, 130));
@@ -469,13 +480,6 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.getContentPane().add(LG7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 120, 130));
         Tutorial_Game.getContentPane().add(LG8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 120, 130));
         Tutorial_Game.getContentPane().add(LG9, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 250, 120, 130));
-
-        jPanel1.setOpaque(false);
-
-        LG1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(LG1);
-
-        Tutorial_Game.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 110, 140));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Ghostphobia", 1, 45)); // NOI18N
@@ -531,7 +535,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.getContentPane().add(PanelInf_Plants, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 120, 520));
 
         Tutorial_Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Backyard_Tutorial.jpg"))); // NOI18N
-        Tutorial_Game.getContentPane().add(Tutorial_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 620));
+        Tutorial_Game.getContentPane().add(Tutorial_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 990, 600));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tutorial_Game.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 110, 110));
@@ -635,7 +639,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.pack();
         Tutorial_Game.setLocationRelativeTo(this);
 
-        DisparoLanzaguisantes gm = new DisparoLanzaguisantes(jLabel5);
+        DisparoLanzaguisantes gm = new DisparoLanzaguisantes(jLabel5, LG2,evt.getX(),evt.getY());
         t = new Thread(gm);
         t.start();
 
@@ -643,9 +647,11 @@ public class Intro extends javax.swing.JFrame {
         t2 = new Thread(gs);
         t2.start();
 
-        MoveZombies mz = new MoveZombies(ZombieTut);
+        MoveZombies mz = new MoveZombies(ZombieTut,evt.getX(),evt.getY());
         t3 = new Thread(mz);
         t3.start();
+        
+        Disparo();
     }//GEN-LAST:event_TutorialMouseClicked
 
     private void Panel_LanzaguisantesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_LanzaguisantesMousePressed
@@ -656,10 +662,11 @@ public class Intro extends javax.swing.JFrame {
     private void Panel_LanzaguisantesMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_LanzaguisantesMouseDragged
         if (Panel_Lanzaguisantes.isEnabled()) {
             Panel_Lanzaguisantes.getX();
-
             int x = evt.getXOnScreen();
             Panel_Lanzaguisantes.getY();
             int y = evt.getYOnScreen();
+
+            poner = true;
 
             Panel_Lanzaguisantes.setLocation(x - (4 * xMouse), y - (4 * yMouse));
         }
@@ -758,11 +765,32 @@ public class Intro extends javax.swing.JFrame {
         Pause_Screen.setVisible(true);
         Pause_Screen.pack();
         Pause_Screen.setLocationRelativeTo(this);
+
+        t.suspend();
+        t2.suspend();
+        t3.suspend();
     }//GEN-LAST:event_PauseMouseClicked
 
     private void ResumeGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResumeGameMouseClicked
         Pause_Screen.setVisible(false);
+        Pause_Screen.pack();
+
+        t.resume();
+        t2.resume();
+        t3.resume();
     }//GEN-LAST:event_ResumeGameMouseClicked
+
+    private void LG1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LG1MouseEntered
+        if (poner){
+            lugar = LG1;
+        }
+    }//GEN-LAST:event_LG1MouseEntered
+
+    private void LG1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LG1MouseReleased
+        if (poner){
+            lugar.setIcon(new ImageIcon ("./Images\\ANIMACION3_LanzaGuisantes.gif" ));
+        }
+    }//GEN-LAST:event_LG1MouseReleased
 
     /**
      * @param args the command line arguments
@@ -796,7 +824,8 @@ public class Intro extends javax.swing.JFrame {
             public void run() {
                 new Intro().setVisible(true);
             }
-        });
+        }
+        );
     }
 
     private void abrir_Intro() {
@@ -811,6 +840,15 @@ public class Intro extends javax.swing.JFrame {
         }
 
     }
+    
+    public void Disparo(){
+        if (gm.getX() == mz.getX()){
+            zombies.setHealth(zombies.getHealth()-150);
+        }
+        if (zombies.getHealth() <= 0){
+            mz.getLabel().setVisible(false);
+        }
+    }
 
     private int xMouse;
     private int yMouse;
@@ -824,8 +862,11 @@ public class Intro extends javax.swing.JFrame {
 
     MoveZombies mz;
     Thread t3 = new Thread(mz);
-    
 
+    private boolean poner = false;
+    private JLabel lugar = new JLabel();
+    
+    private Zombies zombies = new Zombies();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Adventure;
     private javax.swing.JLabel Adventure_Background1;
@@ -939,7 +980,6 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jt_Name;
     // End of variables declaration//GEN-END:variables

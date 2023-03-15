@@ -5,13 +5,15 @@ public class Zombies {
     private String name;
     private int health;
     private int attackPower;
+    int x;
+    int y;
 
     public Zombies() {
     }
 
     public Zombies(String name, int health, int attackPower) {
         this.name = name;
-        this.health = health;
+        this.health = 150;
         this.attackPower = attackPower;
     }
 
