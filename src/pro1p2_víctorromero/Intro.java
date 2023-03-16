@@ -28,6 +28,9 @@ public class Intro extends javax.swing.JFrame {
         this.pack();
         this.setLocationRelativeTo(null);
 
+        Audio a = new Audio("./Images\\MusicaPVZ,mp3");
+        Thread audio = new Thread(a);
+        audio.start();
     }
 
     /**
@@ -639,7 +642,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.pack();
         Tutorial_Game.setLocationRelativeTo(this);
 
-        DisparoLanzaguisantes gm = new DisparoLanzaguisantes(jLabel5, LG2,evt.getX(),evt.getY());
+        DisparoLanzaguisantes gm = new DisparoLanzaguisantes(jLabel5, LG2, evt.getX(), evt.getY());
         t = new Thread(gm);
         t.start();
 
@@ -647,10 +650,10 @@ public class Intro extends javax.swing.JFrame {
         t2 = new Thread(gs);
         t2.start();
 
-        MoveZombies mz = new MoveZombies(ZombieTut,evt.getX(),evt.getY());
+        MoveZombies mz = new MoveZombies(ZombieTut, evt.getX(), evt.getY());
         t3 = new Thread(mz);
         t3.start();
-        
+
 //        Disparo(gm,mz);
     }//GEN-LAST:event_TutorialMouseClicked
 
@@ -781,14 +784,14 @@ public class Intro extends javax.swing.JFrame {
     }//GEN-LAST:event_ResumeGameMouseClicked
 
     private void LG1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LG1MouseEntered
-        if (poner){
+        if (poner) {
             lugar = LG1;
         }
     }//GEN-LAST:event_LG1MouseEntered
 
     private void LG1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LG1MouseReleased
-        if (poner){
-            lugar.setIcon(new ImageIcon ("./Images\\ANIMACION3_LanzaGuisantes.gif" ));
+        if (poner) {
+            lugar.setIcon(new ImageIcon("./Images\\ANIMACION3_LanzaGuisantes.gif"));
         }
     }//GEN-LAST:event_LG1MouseReleased
 
@@ -840,12 +843,12 @@ public class Intro extends javax.swing.JFrame {
         }
 
     }
-    
-    public void Disparo(DisparoLanzaguisantes gm, MoveZombies mz){
-        if (gm.getX() == mz.getX()){
-            zombies.setHealth(zombies.getHealth()-150);
+
+    public void Disparo(DisparoLanzaguisantes gm, MoveZombies mz) {
+        if (gm.getX() == mz.getX()) {
+            zombies.setHealth(zombies.getHealth() - 150);
         }
-        if (zombies.getHealth() <= 0){
+        if (zombies.getHealth() <= 0) {
             mz.getLabel().setVisible(false);
         }
     }
@@ -865,7 +868,7 @@ public class Intro extends javax.swing.JFrame {
 
     private boolean poner = false;
     private JLabel lugar = new JLabel();
-    
+
     private Zombies zombies = new Zombies();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Adventure;

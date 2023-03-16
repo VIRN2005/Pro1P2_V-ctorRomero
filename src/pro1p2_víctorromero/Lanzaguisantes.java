@@ -1,34 +1,58 @@
 package pro1p2_víctorromero;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class Lanzaguisantes extends Plants {
 
-    private int reload;
-    private int velocidadDisparo;
+    private JPanel paneles;
+    private int x;
+    private int y;
+    private JLabel spot;
 
     public Lanzaguisantes() {
         super();
     }
 
-    public Lanzaguisantes(int reload, int velocidadDisparo, String name, int sunCost, int health, int attackPower) {
-        super(name, sunCost, health, attackPower);
-        this.reload = reload;
-        this.velocidadDisparo = velocidadDisparo;
+    public Lanzaguisantes(JPanel paneles, int x, int y, JLabel spot, String name, int sunCost, int health, int attackPower) {
+        super("Lanzaguisantes", 100, 300, 25);
+        this.paneles = paneles;
+        this.x = x;
+        this.y = y;
+        this.spot = spot;
     }
 
-    public int getReload() {
-        return reload;
+    public JPanel getPaneles() {
+        return paneles;
     }
 
-    public void setReload(int reload) {
-        this.reload = reload;
+    public void setPaneles(JPanel paneles) {
+        this.paneles = paneles;
     }
 
-    public int getVelocidadDisparo() {
-        return velocidadDisparo;
+    public int getX() {
+        return x;
     }
 
-    public void setVelocidadDisparo(int velocidadDisparo) {
-        this.velocidadDisparo = velocidadDisparo;
+    public void setX(int x) {
+        this.x = x;
     }
 
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public JLabel getSpot() {
+        return spot;
+    }
+
+    public void setSpot(JLabel spot) {
+        this.spot = spot;
+    }
+
+    
 }
