@@ -651,7 +651,7 @@ public class Intro extends javax.swing.JFrame {
         t3 = new Thread(mz);
         t3.start();
         
-        Disparo();
+//        Disparo(gm,mz);
     }//GEN-LAST:event_TutorialMouseClicked
 
     private void Panel_LanzaguisantesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_LanzaguisantesMousePressed
@@ -841,7 +841,7 @@ public class Intro extends javax.swing.JFrame {
 
     }
     
-    public void Disparo(){
+    public void Disparo(DisparoLanzaguisantes gm, MoveZombies mz){
         if (gm.getX() == mz.getX()){
             zombies.setHealth(zombies.getHealth()-150);
         }
