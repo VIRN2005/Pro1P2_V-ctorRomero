@@ -637,7 +637,7 @@ public class Intro extends javax.swing.JFrame {
         if (cb_users.getSelectedItem() != null) {
             usuario = (User) cb_users.getSelectedItem();
             lb_name.setText(usuario.getNombre());
-            String path = "./src/users/" + usuario.getNombre() + ".virn";
+            String path = "./src/pro1p2_víctorromero/" + usuario.getNombre() + ".virn";
             administrador = new Administrador(path);
             try {
                 administrador.load();

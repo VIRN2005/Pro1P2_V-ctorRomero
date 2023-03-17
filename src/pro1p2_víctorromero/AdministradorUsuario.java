@@ -62,7 +62,7 @@ public class AdministradorUsuario {
 
     public void add() {
         try {
-            FileWriter writer = new FileWriter(usersFile, false);
+            FileWriter writer = new FileWriter(usersFile, true);
             BufferedWriter bw = new BufferedWriter(writer);
             for (User usuario : usersList) {
                 bw.write(usuario.getNombre() + ";" + usuario.getN1() + ";" + usuario.getN2() + ";" + usuario.getN3() + "\n");
