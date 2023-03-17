@@ -2,12 +2,13 @@ package pro1p2_víctorromero;
 
 import javax.swing.JLabel;
 
-public class DisparoLanzaguisantes implements Runnable {
+public class DisparoLanzaguisantes extends Thread{
 
     private JLabel label;
     private JLabel labelPlanta;
     private int x;
     private int y;
+    private boolean flag;
 
     public DisparoLanzaguisantes() {
     }
@@ -17,6 +18,7 @@ public class DisparoLanzaguisantes implements Runnable {
         this.labelPlanta = labelPlanta;
         this.x = x;
         this.y = y;
+        this.flag = true;
     }
 
     public JLabel getLabel() {
@@ -54,7 +56,7 @@ public class DisparoLanzaguisantes implements Runnable {
     @Override
     public void run() {
 
-        while (true) {
+        while (flag) {
             for (int i = 0; i < 600; i++) {
                 label.setLocation((labelPlanta.getX() + 80) + i, (labelPlanta.getY()) + 50);
                 try {

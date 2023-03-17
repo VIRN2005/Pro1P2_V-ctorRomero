@@ -2,21 +2,23 @@ package pro1p2_víctorromero;
 
 import javax.swing.JLabel;
 
-public class MoveZombies implements Runnable {
+public class MoveZombies extends Thread{
 
     private JLabel label;
     private Zombies zombie;
-    int x;
-    int y;
+    private int x;
+    private int y;
+    private boolean flag;
+    
 
     public MoveZombies() {
     }
 
     public MoveZombies(JLabel label, int x, int y) {
         this.label = label;
-        this.zombie = zombie;
         this.x = x;
         this.y = y;
+        this.flag = true;
     }
 
     public JLabel getLabel() {
@@ -42,7 +44,7 @@ public class MoveZombies implements Runnable {
     
     @Override
     public void run() {
-        while (true) {
+        while (flag) {
             for (int i = 0; i < 500; i++) {
                 label.setLocation(960 - i, 240);
                 try {
