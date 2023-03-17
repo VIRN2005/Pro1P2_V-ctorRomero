@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,13 +29,13 @@ public class Intro extends javax.swing.JFrame {
         initComponents();
         this.pack();
         this.setLocationRelativeTo(null);
-        
+
         userAdministrador = new AdministradorUsuario("./src/users/usuarios.txt");
         userAdministrador.leer();
 
         LlenarUsuarios();
         this.setResizable(false);
-        
+
     }
 
     /**
@@ -58,7 +59,6 @@ public class Intro extends javax.swing.JFrame {
         Girasol = new javax.swing.JLabel();
         GamePlay = new javax.swing.JLabel();
         Main_Screen = new javax.swing.JFrame();
-        cb_users = new javax.swing.JComboBox<>();
         bt_createUser = new javax.swing.JButton();
         lb_name = new javax.swing.JLabel();
         Adventure = new javax.swing.JLabel();
@@ -157,6 +157,8 @@ public class Intro extends javax.swing.JFrame {
         Pause_Screen = new javax.swing.JFrame();
         ResumeGame = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        cb_users = new javax.swing.JComboBox<>();
+        NewPlayer = new javax.swing.JButton();
         VR_Presents = new javax.swing.JLabel();
         VR_PresentsBlack = new javax.swing.JLabel();
         VR = new javax.swing.JLabel();
@@ -228,11 +230,6 @@ public class Intro extends javax.swing.JFrame {
 
         Main_Screen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cb_users.setBackground(new java.awt.Color(55, 47, 0));
-        cb_users.setFont(new java.awt.Font("Ghostphobia", 0, 18)); // NOI18N
-        cb_users.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Main_Screen.getContentPane().add(cb_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 240, 30));
-
         bt_createUser.setBackground(new java.awt.Color(51, 153, 0));
         bt_createUser.setForeground(new java.awt.Color(0, 0, 0));
         bt_createUser.setText("Elegir usuario");
@@ -248,10 +245,12 @@ public class Intro extends javax.swing.JFrame {
         });
         Main_Screen.getContentPane().add(bt_createUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, -1));
 
+        lb_name.setBackground(new java.awt.Color(55, 47, 0));
+        lb_name.setFont(new java.awt.Font("Ghostphobia", 0, 24)); // NOI18N
         lb_name.setForeground(new java.awt.Color(255, 255, 255));
         lb_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_name.setText("jLabel1");
-        Main_Screen.getContentPane().add(lb_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 170, -1));
+        lb_name.setOpaque(true);
+        Main_Screen.getContentPane().add(lb_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 240, 30));
 
         Adventure.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Adventure.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -586,6 +585,21 @@ public class Intro extends javax.swing.JFrame {
         setTitle("Plants vs Zombies (VR Edition)");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        cb_users.setBackground(new java.awt.Color(55, 47, 0));
+        cb_users.setFont(new java.awt.Font("Ghostphobia", 0, 36)); // NOI18N
+        cb_users.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cb_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 410, 50));
+
+        NewPlayer.setBackground(new java.awt.Color(0, 102, 0));
+        NewPlayer.setFont(new java.awt.Font("Ghostphobia", 0, 24)); // NOI18N
+        NewPlayer.setText("New Player!");
+        NewPlayer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NewPlayerMouseClicked(evt);
+            }
+        });
+        getContentPane().add(NewPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 160, 40));
+
         VR_Presents.setBackground(new java.awt.Color(0, 0, 0));
         VR_Presents.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
         VR_Presents.setForeground(new java.awt.Color(255, 255, 255));
@@ -620,11 +634,23 @@ public class Intro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TapToStartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TapToStartMouseClicked
+        if (cb_users.getSelectedItem() != null) {
+            usuario = (User) cb_users.getSelectedItem();
+            lb_name.setText(usuario.getNombre());
+            String path = "./src/users/" + usuario.getNombre() + ".virn";
+            administrador = new Administrador(path);
+            try {
+                administrador.load();
+            } catch (IOException ex) {
+                Logger.getLogger(Intro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
         this.setVisible(false);
         EA_Presents.setVisible(true);
         EA_Presents.pack();
         EA_Presents.setLocationRelativeTo(this);
-        
+
         if (audio.isAlive()) {
             audio.getClip().close();
             audio.stop();
@@ -837,6 +863,28 @@ public class Intro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_createUserActionPerformed
 
+    private void NewPlayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NewPlayerMouseClicked
+        String nombre = JOptionPane.showInputDialog("Ingrese nombre de usuario");
+        int validar = 0;
+        for (User u : userAdministrador.getUsersList()) {
+            if (nombre.equals(u.getNombre())) {
+                validar++;
+                break;
+            }
+        }
+
+        if (validar == 0) {
+            User nuevo = new User(nombre);
+            userAdministrador.getUsersList().add(nuevo);
+            userAdministrador.add();
+            LlenarUsuarios();
+        } else {
+            JOptionPane.showMessageDialog(this, "Nombre Repetido");
+        }
+
+
+    }//GEN-LAST:event_NewPlayerMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -851,16 +899,24 @@ public class Intro extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Intro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Intro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Intro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Intro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -873,7 +929,7 @@ public class Intro extends javax.swing.JFrame {
         );
     }
 
-   public void LlenarUsuarios() {
+    public void LlenarUsuarios() {
 
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_users.getModel();
         modelo.removeAllElements();
@@ -923,7 +979,7 @@ public class Intro extends javax.swing.JFrame {
     private AdministradorUsuario userAdministrador;
     private Administrador administrador;
     private User usuario;
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Adventure;
     private javax.swing.JLabel Adventure_Background1;
@@ -994,6 +1050,7 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel Lanzaguisantes;
     private javax.swing.JLabel MainScreen;
     private javax.swing.JFrame Main_Screen;
+    private javax.swing.JButton NewPlayer;
     private javax.swing.JPanel PanelInf_Plants;
     private javax.swing.JPanel PanelInf_Plants1;
     private javax.swing.JPanel PanelSup_Plants;
