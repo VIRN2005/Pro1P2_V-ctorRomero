@@ -59,7 +59,6 @@ public class Intro extends javax.swing.JFrame {
         Girasol = new javax.swing.JLabel();
         GamePlay = new javax.swing.JLabel();
         Main_Screen = new javax.swing.JFrame();
-        bt_createUser = new javax.swing.JButton();
         lb_name = new javax.swing.JLabel();
         Adventure = new javax.swing.JLabel();
         Tutorial = new javax.swing.JLabel();
@@ -156,7 +155,52 @@ public class Intro extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         Pause_Screen = new javax.swing.JFrame();
         ResumeGame = new javax.swing.JButton();
+        SaveandLeave = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        Survival_Game = new javax.swing.JFrame();
+        LG16 = new javax.swing.JLabel();
+        LG40 = new javax.swing.JLabel();
+        LG60 = new javax.swing.JLabel();
+        LG61 = new javax.swing.JLabel();
+        LG62 = new javax.swing.JLabel();
+        LG63 = new javax.swing.JLabel();
+        LG64 = new javax.swing.JLabel();
+        LG65 = new javax.swing.JLabel();
+        LG66 = new javax.swing.JLabel();
+        LG67 = new javax.swing.JLabel();
+        LG68 = new javax.swing.JLabel();
+        LG69 = new javax.swing.JLabel();
+        LG70 = new javax.swing.JLabel();
+        LG71 = new javax.swing.JLabel();
+        LG72 = new javax.swing.JLabel();
+        LG73 = new javax.swing.JLabel();
+        LG74 = new javax.swing.JLabel();
+        LG75 = new javax.swing.JLabel();
+        LG76 = new javax.swing.JLabel();
+        LG87 = new javax.swing.JLabel();
+        LG88 = new javax.swing.JLabel();
+        LG89 = new javax.swing.JLabel();
+        LG90 = new javax.swing.JLabel();
+        LG91 = new javax.swing.JLabel();
+        LG92 = new javax.swing.JLabel();
+        LG93 = new javax.swing.JLabel();
+        LG95 = new javax.swing.JLabel();
+        LG105 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        SunBoard2 = new javax.swing.JPanel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        PanelSup_Plants2 = new javax.swing.JPanel();
+        Panel_Lanzaguisantes5 = new javax.swing.JLabel();
+        Panel_Lanzaguisantes6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        PanelInf_Plants2 = new javax.swing.JPanel();
+        Adventure_Background2 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        Zombie1 = new javax.swing.JLabel();
         cb_users = new javax.swing.JComboBox<>();
         NewPlayer = new javax.swing.JButton();
         VR_Presents = new javax.swing.JLabel();
@@ -230,21 +274,6 @@ public class Intro extends javax.swing.JFrame {
 
         Main_Screen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bt_createUser.setBackground(new java.awt.Color(51, 153, 0));
-        bt_createUser.setForeground(new java.awt.Color(0, 0, 0));
-        bt_createUser.setText("Elegir usuario");
-        bt_createUser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_createUserMouseClicked(evt);
-            }
-        });
-        bt_createUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_createUserActionPerformed(evt);
-            }
-        });
-        Main_Screen.getContentPane().add(bt_createUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, -1));
-
         lb_name.setBackground(new java.awt.Color(55, 47, 0));
         lb_name.setFont(new java.awt.Font("Ghostphobia", 0, 24)); // NOI18N
         lb_name.setForeground(new java.awt.Color(255, 255, 255));
@@ -308,7 +337,6 @@ public class Intro extends javax.swing.JFrame {
         Adventure_Game.getContentPane().add(LG10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 120, 130));
 
         LG11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LG11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION3_LanzaGuisantes.gif"))); // NOI18N
         Adventure_Game.getContentPane().add(LG11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 120, 130));
         Adventure_Game.getContentPane().add(LG12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 120, 130));
         Adventure_Game.getContentPane().add(LG13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 120, 130));
@@ -578,8 +606,140 @@ public class Intro extends javax.swing.JFrame {
         });
         Pause_Screen.getContentPane().add(ResumeGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 330, 40));
 
+        SaveandLeave.setBackground(new java.awt.Color(24, 24, 55));
+        SaveandLeave.setFont(new java.awt.Font("Ghostphobia", 0, 36)); // NOI18N
+        SaveandLeave.setForeground(new java.awt.Color(204, 204, 0));
+        SaveandLeave.setText("SAVE & LEAVE");
+        SaveandLeave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SaveandLeave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveandLeaveMouseClicked(evt);
+            }
+        });
+        Pause_Screen.getContentPane().add(SaveandLeave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 330, 50));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause (SIN Fondo).png"))); // NOI18N
         Pause_Screen.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
+
+        Survival_Game.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Survival_Game.getContentPane().add(LG16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 120, 130));
+
+        LG40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Survival_Game.getContentPane().add(LG40, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG60, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG61, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG62, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG63, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG64, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG65, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG66, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 120, 130));
+        Survival_Game.getContentPane().add(LG67, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG68, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG69, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG70, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG71, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG72, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG73, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 150, 120, 130));
+        Survival_Game.getContentPane().add(LG74, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG75, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG76, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 120, 130));
+        Survival_Game.getContentPane().add(LG87, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG88, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG89, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG90, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG91, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG92, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG93, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG95, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 120, 130));
+        Survival_Game.getContentPane().add(LG105, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, 120, 130));
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Sun2.png"))); // NOI18N
+        Survival_Game.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
+
+        SunBoard2.setBackground(new java.awt.Color(55, 47, 0));
+        SunBoard2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        SunBoard2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField3.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField3.setFont(new java.awt.Font("Ghostphobia", 1, 45)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.setBorder(null);
+        SunBoard2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 90, 40));
+
+        jLabel13.setBackground(new java.awt.Color(255, 255, 153));
+        jLabel13.setOpaque(true);
+        SunBoard2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 10, 110, 40));
+
+        Survival_Game.getContentPane().add(SunBoard2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 170, 60));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Backyard Dirt.png"))); // NOI18N
+        Survival_Game.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 740, 150));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Backyard Dirt.png"))); // NOI18N
+        Survival_Game.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 720, 100));
+
+        PanelSup_Plants2.setBackground(new java.awt.Color(55, 47, 0));
+        PanelSup_Plants2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        Panel_Lanzaguisantes5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Panel_Lanzaguisantes5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Tarjeta_lanzaguisantes.png"))); // NOI18N
+        Panel_Lanzaguisantes5.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Panel_Lanzaguisantes5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes5MouseDragged(evt);
+            }
+        });
+        Panel_Lanzaguisantes5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes5MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes5MouseReleased(evt);
+            }
+        });
+        PanelSup_Plants2.add(Panel_Lanzaguisantes5);
+
+        Panel_Lanzaguisantes6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Panel_Lanzaguisantes6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/girasol_carta.png"))); // NOI18N
+        Panel_Lanzaguisantes6.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Panel_Lanzaguisantes6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes6MouseDragged(evt);
+            }
+        });
+        Panel_Lanzaguisantes6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes6MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes6MouseReleased(evt);
+            }
+        });
+        PanelSup_Plants2.add(Panel_Lanzaguisantes6);
+        PanelSup_Plants2.add(jPanel1);
+
+        Survival_Game.getContentPane().add(PanelSup_Plants2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 100, 500));
+
+        PanelInf_Plants2.setBackground(new java.awt.Color(86, 86, 2));
+        PanelInf_Plants2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Survival_Game.getContentPane().add(PanelInf_Plants2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 120, 520));
+
+        Adventure_Background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Background2.jpg"))); // NOI18N
+        Survival_Game.getContentPane().add(Adventure_Background2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 620));
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Survival_Game.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 110, 110));
+
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION3_LanzaGuisantes.gif"))); // NOI18N
+        Survival_Game.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
+
+        Zombie1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Zombie1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
+        Zombie1.setText("jLabel4");
+        Zombie1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plants vs Zombies (VR Edition)");
@@ -693,7 +853,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.setLocationRelativeTo(this);
 
         DisparoLanzaguisantes gm = new DisparoLanzaguisantes(jLabel5, LG2, evt.getX(), evt.getY());
-        //gm.start();
+        gm.start();
 
         GeneradorSol gs = new GeneradorSol(Sol, true);
         t2 = new Thread(gs);
@@ -817,9 +977,9 @@ public class Intro extends javax.swing.JFrame {
         Pause_Screen.pack();
         Pause_Screen.setLocationRelativeTo(this);
 
-//        t.suspend();
+//        gm.suspend();
 //        t2.suspend();
-//        t3.suspend();
+//        mz.suspend();
     }//GEN-LAST:event_PauseMouseClicked
 
     private void ResumeGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResumeGameMouseClicked
@@ -843,26 +1003,6 @@ public class Intro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LG1MouseReleased
 
-    private void bt_createUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_createUserMouseClicked
-
-        if (cb_users.getSelectedItem() != null) {
-            usuario = (User) cb_users.getSelectedItem();
-            lb_name.setText(usuario.getNombre());
-            String path = "./src/users/" + usuario.getNombre() + ".dar";
-            administrador = new Administrador(path);
-            try {
-                administrador.load();
-            } catch (IOException ex) {
-                Logger.getLogger(Intro.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-    }//GEN-LAST:event_bt_createUserMouseClicked
-
-    private void bt_createUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_createUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bt_createUserActionPerformed
-
     private void NewPlayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NewPlayerMouseClicked
         String nombre = JOptionPane.showInputDialog("Ingrese nombre de usuario");
         int validar = 0;
@@ -884,6 +1024,39 @@ public class Intro extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_NewPlayerMouseClicked
+
+    private void Panel_Lanzaguisantes5MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes5MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Panel_Lanzaguisantes5MouseDragged
+
+    private void Panel_Lanzaguisantes5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes5MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Panel_Lanzaguisantes5MousePressed
+
+    private void Panel_Lanzaguisantes5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes5MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Panel_Lanzaguisantes5MouseReleased
+
+    private void Panel_Lanzaguisantes6MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes6MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Panel_Lanzaguisantes6MouseDragged
+
+    private void Panel_Lanzaguisantes6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes6MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Panel_Lanzaguisantes6MousePressed
+
+    private void Panel_Lanzaguisantes6MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes6MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Panel_Lanzaguisantes6MouseReleased
+
+    private void SaveandLeaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveandLeaveMouseClicked
+        Pause_Screen.setVisible(false);
+        Pause_Screen.pack();
+        
+        Main_Screen.setVisible(true);
+        Main_Screen.setLocationRelativeTo(this);
+        Main_Screen.pack();
+    }//GEN-LAST:event_SaveandLeaveMouseClicked
 
     /**
      * @param args the command line arguments
@@ -930,7 +1103,6 @@ public class Intro extends javax.swing.JFrame {
     }
 
     public void LlenarUsuarios() {
-
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_users.getModel();
         modelo.removeAllElements();
         for (User u : userAdministrador.getUsersList()) {
@@ -960,7 +1132,7 @@ public class Intro extends javax.swing.JFrame {
     //Coords
     private int xMouse;
     private int yMouse;
-    private int cantSoles = 0;
+    private int cantSoles = 100;
 
     //Thread Cracion de Soles
     GeneradorSol gs;
@@ -983,6 +1155,7 @@ public class Intro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Adventure;
     private javax.swing.JLabel Adventure_Background1;
+    private javax.swing.JLabel Adventure_Background2;
     private javax.swing.JFrame Adventure_Game;
     private javax.swing.JFrame EA_Presents;
     private javax.swing.JLabel EA_VR;
@@ -992,11 +1165,13 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel Girasol;
     private javax.swing.JLabel LG1;
     private javax.swing.JLabel LG10;
+    private javax.swing.JLabel LG105;
     private javax.swing.JLabel LG11;
     private javax.swing.JLabel LG12;
     private javax.swing.JLabel LG13;
     private javax.swing.JLabel LG14;
     private javax.swing.JLabel LG15;
+    private javax.swing.JLabel LG16;
     private javax.swing.JLabel LG17;
     private javax.swing.JLabel LG18;
     private javax.swing.JLabel LG19;
@@ -1023,6 +1198,7 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel LG38;
     private javax.swing.JLabel LG39;
     private javax.swing.JLabel LG4;
+    private javax.swing.JLabel LG40;
     private javax.swing.JLabel LG41;
     private javax.swing.JLabel LG42;
     private javax.swing.JLabel LG43;
@@ -1044,21 +1220,50 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel LG58;
     private javax.swing.JLabel LG59;
     private javax.swing.JLabel LG6;
+    private javax.swing.JLabel LG60;
+    private javax.swing.JLabel LG61;
+    private javax.swing.JLabel LG62;
+    private javax.swing.JLabel LG63;
+    private javax.swing.JLabel LG64;
+    private javax.swing.JLabel LG65;
+    private javax.swing.JLabel LG66;
+    private javax.swing.JLabel LG67;
+    private javax.swing.JLabel LG68;
+    private javax.swing.JLabel LG69;
     private javax.swing.JLabel LG7;
+    private javax.swing.JLabel LG70;
+    private javax.swing.JLabel LG71;
+    private javax.swing.JLabel LG72;
+    private javax.swing.JLabel LG73;
+    private javax.swing.JLabel LG74;
+    private javax.swing.JLabel LG75;
+    private javax.swing.JLabel LG76;
     private javax.swing.JLabel LG8;
+    private javax.swing.JLabel LG87;
+    private javax.swing.JLabel LG88;
+    private javax.swing.JLabel LG89;
     private javax.swing.JLabel LG9;
+    private javax.swing.JLabel LG90;
+    private javax.swing.JLabel LG91;
+    private javax.swing.JLabel LG92;
+    private javax.swing.JLabel LG93;
+    private javax.swing.JLabel LG95;
     private javax.swing.JLabel Lanzaguisantes;
     private javax.swing.JLabel MainScreen;
     private javax.swing.JFrame Main_Screen;
     private javax.swing.JButton NewPlayer;
     private javax.swing.JPanel PanelInf_Plants;
     private javax.swing.JPanel PanelInf_Plants1;
+    private javax.swing.JPanel PanelInf_Plants2;
     private javax.swing.JPanel PanelSup_Plants;
     private javax.swing.JPanel PanelSup_Plants1;
+    private javax.swing.JPanel PanelSup_Plants2;
     private javax.swing.JLabel Panel_Lanzaguisantes;
     private javax.swing.JLabel Panel_Lanzaguisantes2;
     private javax.swing.JLabel Panel_Lanzaguisantes3;
     private javax.swing.JLabel Panel_Lanzaguisantes4;
+    private javax.swing.JLabel Panel_Lanzaguisantes5;
+    private javax.swing.JLabel Panel_Lanzaguisantes6;
     private javax.swing.JLabel Pantalla;
     private javax.swing.JButton Pause;
     private javax.swing.JFrame Pause_Screen;
@@ -1069,10 +1274,13 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel PvZ_Logo;
     private javax.swing.JButton ResumeGame;
     private javax.swing.JLabel RickRoll;
+    private javax.swing.JButton SaveandLeave;
     private javax.swing.JLabel Sol;
     private javax.swing.JPanel SunBoard;
     private javax.swing.JPanel SunBoard1;
+    private javax.swing.JPanel SunBoard2;
     private javax.swing.JLabel Survival;
+    private javax.swing.JFrame Survival_Game;
     private javax.swing.JLabel TapToStart;
     private javax.swing.JLabel Tutorial;
     private javax.swing.JLabel Tutorial1;
@@ -1082,12 +1290,18 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel VR_Presents;
     private javax.swing.JLabel VR_PresentsBlack;
     private javax.swing.JLabel Zombie;
+    private javax.swing.JLabel Zombie1;
     private javax.swing.JLabel ZombieTut;
-    private javax.swing.JButton bt_createUser;
     private javax.swing.JComboBox<String> cb_users;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1096,7 +1310,9 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lb_name;
     // End of variables declaration//GEN-END:variables
 
