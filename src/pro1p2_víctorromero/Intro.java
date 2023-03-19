@@ -22,6 +22,9 @@ import javax.swing.JOptionPane;
  */
 public class Intro extends javax.swing.JFrame {
 
+    private Intro Intro;
+    private Juego gameplay;
+
     /**
      * Creates new form Intro
      */
@@ -69,6 +72,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial1 = new javax.swing.JLabel();
         Adventure_Game = new javax.swing.JFrame();
         Pause1 = new javax.swing.JButton();
+        Sol1 = new javax.swing.JLabel();
         Zombie = new javax.swing.JLabel();
         LG10 = new javax.swing.JLabel();
         LG11 = new javax.swing.JLabel();
@@ -227,7 +231,6 @@ public class Intro extends javax.swing.JFrame {
         EA_Presents.getContentPane().add(Presents, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 190, 60));
 
         PresentsBlack.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
-        PresentsBlack.setForeground(new java.awt.Color(0, 0, 0));
         PresentsBlack.setText("Presents");
         EA_Presents.getContentPane().add(PresentsBlack, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 190, 80));
 
@@ -243,7 +246,6 @@ public class Intro extends javax.swing.JFrame {
 
         EA_VRBlack.setBackground(new java.awt.Color(255, 0, 0));
         EA_VRBlack.setFont(new java.awt.Font("Ghostphobia", 1, 80)); // NOI18N
-        EA_VRBlack.setForeground(new java.awt.Color(0, 0, 0));
         EA_VRBlack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EA_VRBlack.setText("EA & VR ");
         EA_VRBlack.setToolTipText("");
@@ -251,7 +253,6 @@ public class Intro extends javax.swing.JFrame {
 
         PressBlack.setBackground(new java.awt.Color(0, 255, 0));
         PressBlack.setFont(new java.awt.Font("Ghostphobia", 1, 40)); // NOI18N
-        PressBlack.setForeground(new java.awt.Color(0, 0, 0));
         PressBlack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PressBlack.setText("PRESS TO CONTINUE");
         EA_Presents.getContentPane().add(PressBlack, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 370, 50));
@@ -357,6 +358,16 @@ public class Intro extends javax.swing.JFrame {
         });
         Adventure_Game.getContentPane().add(Pause1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 190, 50));
 
+        Sol1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Sol1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Sun2.png"))); // NOI18N
+        Sol1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Sol1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Sol1MouseClicked(evt);
+            }
+        });
+        Adventure_Game.getContentPane().add(Sol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
+
         Zombie.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Zombie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
         Zombie.setText("jLabel4");
@@ -421,12 +432,13 @@ public class Intro extends javax.swing.JFrame {
         SunBoard1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         SunBoard1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(255, 255, 153));
         jTextField2.setFont(new java.awt.Font("Ghostphobia", 1, 45)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("100");
         jTextField2.setBorder(null);
+        jTextField2.setFocusable(false);
         SunBoard1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 90, 40));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 153));
@@ -560,7 +572,6 @@ public class Intro extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Ghostphobia", 1, 45)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tutorial_Game.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 100, 40));
 
@@ -663,7 +674,6 @@ public class Intro extends javax.swing.JFrame {
 
         jTextField3.setBackground(new java.awt.Color(255, 255, 153));
         jTextField3.setFont(new java.awt.Font("Ghostphobia", 1, 45)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.setBorder(null);
         SunBoard2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 90, 40));
@@ -880,7 +890,6 @@ public class Intro extends javax.swing.JFrame {
         getContentPane().add(VR_Presents, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
 
         VR_PresentsBlack.setFont(new java.awt.Font("Have Heart Two", 0, 70)); // NOI18N
-        VR_PresentsBlack.setForeground(new java.awt.Color(0, 0, 0));
         VR_PresentsBlack.setText("Presents");
         getContentPane().add(VR_PresentsBlack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
 
@@ -1026,6 +1035,8 @@ public class Intro extends javax.swing.JFrame {
         Adventure_Game.setVisible(true);
         Adventure_Game.pack();
         Adventure_Game.setLocationRelativeTo(this);
+        gameplay = new Juego(this);
+        
     }//GEN-LAST:event_AdventureMouseClicked
 
     private void Panel_Lanzaguisantes2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes2MouseDragged
@@ -1049,7 +1060,12 @@ public class Intro extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_Lanzaguisantes2MouseReleased
 
     private void Panel_Lanzaguisantes3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes3MouseDragged
-        // TODO add your handling code here:
+        Panel_Lanzaguisantes2.getX();
+        int x = evt.getXOnScreen();
+        Panel_Lanzaguisantes2.getY();
+        int y = evt.getYOnScreen();
+
+        Panel_Lanzaguisantes2.setLocation(x - (4 * xMouse), y - (4 * yMouse));
     }//GEN-LAST:event_Panel_Lanzaguisantes3MouseDragged
 
     private void Panel_Lanzaguisantes3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes3MousePressed
@@ -1244,6 +1260,10 @@ public class Intro extends javax.swing.JFrame {
         Survival_Game.pack();
         Survival_Game.setLocationRelativeTo(this);
     }//GEN-LAST:event_SurvivalMouseClicked
+
+    private void Sol1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sol1MouseClicked
+        gameplay.clickSol();
+    }//GEN-LAST:event_Sol1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1446,9 +1466,9 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JPanel PanelSup_Plants1;
     private javax.swing.JPanel PanelSup_Plants2;
     private javax.swing.JLabel Panel_Lanzaguisantes;
-    private javax.swing.JLabel Panel_Lanzaguisantes2;
-    private javax.swing.JLabel Panel_Lanzaguisantes3;
-    private javax.swing.JLabel Panel_Lanzaguisantes4;
+    public javax.swing.JLabel Panel_Lanzaguisantes2;
+    public javax.swing.JLabel Panel_Lanzaguisantes3;
+    public javax.swing.JLabel Panel_Lanzaguisantes4;
     private javax.swing.JLabel Panel_Lanzaguisantes5;
     private javax.swing.JLabel Panel_Lanzaguisantes6;
     private javax.swing.JLabel Pantalla;
@@ -1470,7 +1490,8 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JButton SaveandLeave;
     private javax.swing.JButton SaveandLeave1;
     private javax.swing.JButton SaveandLeave2;
-    private javax.swing.JLabel Sol;
+    public javax.swing.JLabel Sol;
+    public javax.swing.JLabel Sol1;
     private javax.swing.JPanel SunBoard;
     private javax.swing.JPanel SunBoard1;
     private javax.swing.JPanel SunBoard2;
@@ -1508,7 +1529,7 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lb_name;
     // End of variables declaration//GEN-END:variables
