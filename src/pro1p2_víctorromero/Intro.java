@@ -30,7 +30,7 @@ public class Intro extends javax.swing.JFrame {
         this.pack();
         this.setLocationRelativeTo(null);
 
-        userAdministrador = new AdministradorUsuario("./src/users/usuarios.txt");
+        userAdministrador = new AdministradorUsuario("./src/usuarios.txt");
         userAdministrador.leer();
 
         LlenarUsuarios();
@@ -68,6 +68,7 @@ public class Intro extends javax.swing.JFrame {
         MainScreen = new javax.swing.JLabel();
         Tutorial1 = new javax.swing.JLabel();
         Adventure_Game = new javax.swing.JFrame();
+        Pause1 = new javax.swing.JButton();
         Zombie = new javax.swing.JLabel();
         LG10 = new javax.swing.JLabel();
         LG11 = new javax.swing.JLabel();
@@ -153,10 +154,6 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Background = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        Pause_Screen = new javax.swing.JFrame();
-        ResumeGame = new javax.swing.JButton();
-        SaveandLeave = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         Survival_Game = new javax.swing.JFrame();
         LG16 = new javax.swing.JLabel();
         LG40 = new javax.swing.JLabel();
@@ -197,10 +194,23 @@ public class Intro extends javax.swing.JFrame {
         Panel_Lanzaguisantes6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         PanelInf_Plants2 = new javax.swing.JPanel();
+        Pause2 = new javax.swing.JButton();
         Adventure_Background2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         Zombie1 = new javax.swing.JLabel();
+        Pause_Screen_TUTORIAL = new javax.swing.JFrame();
+        ResumeGame = new javax.swing.JButton();
+        SaveandLeave = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        Pause_Screen_ADVENTURE = new javax.swing.JFrame();
+        ResumeGame1 = new javax.swing.JButton();
+        SaveandLeave1 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        Pause_Screen_SURVIVAL = new javax.swing.JFrame();
+        ResumeGame2 = new javax.swing.JButton();
+        SaveandLeave2 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
         cb_users = new javax.swing.JComboBox<>();
         NewPlayer = new javax.swing.JButton();
         VR_Presents = new javax.swing.JLabel();
@@ -298,6 +308,11 @@ public class Intro extends javax.swing.JFrame {
         Main_Screen.getContentPane().add(Tutorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 260, 70));
 
         Survival.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Survival.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SurvivalMouseClicked(evt);
+            }
+        });
         Main_Screen.getContentPane().add(Survival, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 220, 70));
 
         Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
@@ -328,6 +343,19 @@ public class Intro extends javax.swing.JFrame {
         Main_Screen.getContentPane().add(Tutorial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 260, 70));
 
         Adventure_Game.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Pause1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause.png"))); // NOI18N
+        Pause1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pause1MouseClicked(evt);
+            }
+        });
+        Pause1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pause1ActionPerformed(evt);
+            }
+        });
+        Adventure_Game.getContentPane().add(Pause1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 190, 50));
 
         Zombie.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Zombie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
@@ -593,34 +621,6 @@ public class Intro extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION3_LanzaGuisantes.gif"))); // NOI18N
         Tutorial_Game.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
 
-        Pause_Screen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Pause_Screen.setUndecorated(true);
-        Pause_Screen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ResumeGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ResumeGame.png"))); // NOI18N
-        ResumeGame.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        ResumeGame.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ResumeGameMouseClicked(evt);
-            }
-        });
-        Pause_Screen.getContentPane().add(ResumeGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 330, 40));
-
-        SaveandLeave.setBackground(new java.awt.Color(24, 24, 55));
-        SaveandLeave.setFont(new java.awt.Font("Ghostphobia", 0, 36)); // NOI18N
-        SaveandLeave.setForeground(new java.awt.Color(204, 204, 0));
-        SaveandLeave.setText("SAVE & LEAVE");
-        SaveandLeave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        SaveandLeave.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SaveandLeaveMouseClicked(evt);
-            }
-        });
-        Pause_Screen.getContentPane().add(SaveandLeave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 330, 50));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause (SIN Fondo).png"))); // NOI18N
-        Pause_Screen.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
-
         Survival_Game.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         Survival_Game.getContentPane().add(LG16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 120, 130));
 
@@ -726,6 +726,19 @@ public class Intro extends javax.swing.JFrame {
         PanelInf_Plants2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Survival_Game.getContentPane().add(PanelInf_Plants2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 120, 520));
 
+        Pause2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause.png"))); // NOI18N
+        Pause2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pause2MouseClicked(evt);
+            }
+        });
+        Pause2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pause2ActionPerformed(evt);
+            }
+        });
+        Survival_Game.getContentPane().add(Pause2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 190, 50));
+
         Adventure_Background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Background2.jpg"))); // NOI18N
         Survival_Game.getContentPane().add(Adventure_Background2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 620));
 
@@ -740,6 +753,105 @@ public class Intro extends javax.swing.JFrame {
         Zombie1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
         Zombie1.setText("jLabel4");
         Zombie1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        Pause_Screen_TUTORIAL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Pause_Screen_TUTORIAL.setUndecorated(true);
+        Pause_Screen_TUTORIAL.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ResumeGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ResumeGame.png"))); // NOI18N
+        ResumeGame.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ResumeGame.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ResumeGameMouseClicked(evt);
+            }
+        });
+        ResumeGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResumeGameActionPerformed(evt);
+            }
+        });
+        Pause_Screen_TUTORIAL.getContentPane().add(ResumeGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 330, 40));
+
+        SaveandLeave.setBackground(new java.awt.Color(24, 24, 55));
+        SaveandLeave.setFont(new java.awt.Font("Ghostphobia", 0, 36)); // NOI18N
+        SaveandLeave.setForeground(new java.awt.Color(204, 204, 0));
+        SaveandLeave.setText("SAVE & LEAVE");
+        SaveandLeave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SaveandLeave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveandLeaveMouseClicked(evt);
+            }
+        });
+        Pause_Screen_TUTORIAL.getContentPane().add(SaveandLeave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 330, 50));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause (SIN Fondo).png"))); // NOI18N
+        Pause_Screen_TUTORIAL.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
+
+        Pause_Screen_ADVENTURE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Pause_Screen_ADVENTURE.setUndecorated(true);
+        Pause_Screen_ADVENTURE.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ResumeGame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ResumeGame.png"))); // NOI18N
+        ResumeGame1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ResumeGame1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ResumeGame1MouseClicked(evt);
+            }
+        });
+        ResumeGame1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResumeGame1ActionPerformed(evt);
+            }
+        });
+        Pause_Screen_ADVENTURE.getContentPane().add(ResumeGame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 330, 40));
+
+        SaveandLeave1.setBackground(new java.awt.Color(24, 24, 55));
+        SaveandLeave1.setFont(new java.awt.Font("Ghostphobia", 0, 36)); // NOI18N
+        SaveandLeave1.setForeground(new java.awt.Color(204, 204, 0));
+        SaveandLeave1.setText("SAVE & LEAVE");
+        SaveandLeave1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SaveandLeave1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveandLeave1MouseClicked(evt);
+            }
+        });
+        Pause_Screen_ADVENTURE.getContentPane().add(SaveandLeave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 330, 50));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause (SIN Fondo).png"))); // NOI18N
+        Pause_Screen_ADVENTURE.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
+
+        Pause_Screen_SURVIVAL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Pause_Screen_SURVIVAL.setUndecorated(true);
+        Pause_Screen_SURVIVAL.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ResumeGame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ResumeGame.png"))); // NOI18N
+        ResumeGame2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ResumeGame2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ResumeGame2MouseClicked(evt);
+            }
+        });
+        ResumeGame2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResumeGame2ActionPerformed(evt);
+            }
+        });
+        Pause_Screen_SURVIVAL.getContentPane().add(ResumeGame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 330, 40));
+
+        SaveandLeave2.setBackground(new java.awt.Color(24, 24, 55));
+        SaveandLeave2.setFont(new java.awt.Font("Ghostphobia", 0, 36)); // NOI18N
+        SaveandLeave2.setForeground(new java.awt.Color(204, 204, 0));
+        SaveandLeave2.setText("SAVE & LEAVE");
+        SaveandLeave2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SaveandLeave2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveandLeave2MouseClicked(evt);
+            }
+        });
+        Pause_Screen_SURVIVAL.getContentPane().add(SaveandLeave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 330, 50));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause (SIN Fondo).png"))); // NOI18N
+        Pause_Screen_SURVIVAL.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plants vs Zombies (VR Edition)");
@@ -973,9 +1085,9 @@ public class Intro extends javax.swing.JFrame {
     }//GEN-LAST:event_PauseActionPerformed
 
     private void PauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PauseMouseClicked
-        Pause_Screen.setVisible(true);
-        Pause_Screen.pack();
-        Pause_Screen.setLocationRelativeTo(this);
+        Pause_Screen_TUTORIAL.setVisible(true);
+        Pause_Screen_TUTORIAL.pack();
+        Pause_Screen_TUTORIAL.setLocationRelativeTo(this);
 
 //        gm.suspend();
 //        t2.suspend();
@@ -983,8 +1095,8 @@ public class Intro extends javax.swing.JFrame {
     }//GEN-LAST:event_PauseMouseClicked
 
     private void ResumeGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResumeGameMouseClicked
-        Pause_Screen.setVisible(false);
-        Pause_Screen.pack();
+        Pause_Screen_TUTORIAL.setVisible(false);
+        Pause_Screen_TUTORIAL.pack();
 
 //        t.resume();
 //        t2.resume();
@@ -1050,13 +1162,88 @@ public class Intro extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_Lanzaguisantes6MouseReleased
 
     private void SaveandLeaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveandLeaveMouseClicked
-        Pause_Screen.setVisible(false);
-        Pause_Screen.pack();
-        
+        Pause_Screen_TUTORIAL.setVisible(false);
+        Pause_Screen_TUTORIAL.pack();
+        Tutorial_Game.setVisible(false);
+
+        //Falta STOP THREADS
         Main_Screen.setVisible(true);
         Main_Screen.setLocationRelativeTo(this);
         Main_Screen.pack();
     }//GEN-LAST:event_SaveandLeaveMouseClicked
+
+    private void ResumeGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResumeGameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResumeGameActionPerformed
+
+    private void ResumeGame1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResumeGame1MouseClicked
+        Pause_Screen_ADVENTURE.setVisible(false);
+        Pause_Screen_ADVENTURE.pack();
+
+    }//GEN-LAST:event_ResumeGame1MouseClicked
+
+    private void ResumeGame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResumeGame1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResumeGame1ActionPerformed
+
+    private void SaveandLeave1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveandLeave1MouseClicked
+        Pause_Screen_ADVENTURE.setVisible(false);
+        Pause_Screen_ADVENTURE.pack();
+        Adventure_Game.setVisible(false);
+
+        //Falta STOP THREADS
+        Main_Screen.setVisible(true);
+        Main_Screen.setLocationRelativeTo(this);
+        Main_Screen.pack();
+    }//GEN-LAST:event_SaveandLeave1MouseClicked
+
+    private void ResumeGame2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResumeGame2MouseClicked
+        Pause_Screen_SURVIVAL.setVisible(false);
+        Pause_Screen_SURVIVAL.pack();
+
+    }//GEN-LAST:event_ResumeGame2MouseClicked
+
+    private void ResumeGame2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResumeGame2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResumeGame2ActionPerformed
+
+    private void SaveandLeave2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveandLeave2MouseClicked
+        Pause_Screen_SURVIVAL.setVisible(false);
+        Pause_Screen_SURVIVAL.pack();
+        Survival_Game.setVisible(false);
+
+        //Falta STOP THREADS
+        Main_Screen.setVisible(true);
+        Main_Screen.setLocationRelativeTo(this);
+        Main_Screen.pack();
+    }//GEN-LAST:event_SaveandLeave2MouseClicked
+
+    private void Pause1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pause1MouseClicked
+        Pause_Screen_ADVENTURE.setVisible(true);
+        Pause_Screen_ADVENTURE.pack();
+        Pause_Screen_ADVENTURE.setLocationRelativeTo(this);
+    }//GEN-LAST:event_Pause1MouseClicked
+
+    private void Pause1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pause1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pause1ActionPerformed
+
+    private void Pause2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pause2MouseClicked
+        Pause_Screen_SURVIVAL.setVisible(true);
+        Pause_Screen_SURVIVAL.pack();
+        Pause_Screen_SURVIVAL.setLocationRelativeTo(this);
+    }//GEN-LAST:event_Pause2MouseClicked
+
+    private void Pause2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pause2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pause2ActionPerformed
+
+    private void SurvivalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SurvivalMouseClicked
+        Main_Screen.setVisible(false);
+        Survival_Game.setVisible(true);
+        Survival_Game.pack();
+        Survival_Game.setLocationRelativeTo(this);
+    }//GEN-LAST:event_SurvivalMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1266,15 +1453,23 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel Panel_Lanzaguisantes6;
     private javax.swing.JLabel Pantalla;
     private javax.swing.JButton Pause;
-    private javax.swing.JFrame Pause_Screen;
+    private javax.swing.JButton Pause1;
+    private javax.swing.JButton Pause2;
+    private javax.swing.JFrame Pause_Screen_ADVENTURE;
+    private javax.swing.JFrame Pause_Screen_SURVIVAL;
+    private javax.swing.JFrame Pause_Screen_TUTORIAL;
     private javax.swing.JLabel Presents;
     private javax.swing.JLabel PresentsBlack;
     private javax.swing.JLabel Press;
     private javax.swing.JLabel PressBlack;
     private javax.swing.JLabel PvZ_Logo;
     private javax.swing.JButton ResumeGame;
+    private javax.swing.JButton ResumeGame1;
+    private javax.swing.JButton ResumeGame2;
     private javax.swing.JLabel RickRoll;
     private javax.swing.JButton SaveandLeave;
+    private javax.swing.JButton SaveandLeave1;
+    private javax.swing.JButton SaveandLeave2;
     private javax.swing.JLabel Sol;
     private javax.swing.JPanel SunBoard;
     private javax.swing.JPanel SunBoard1;
@@ -1302,6 +1497,8 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
