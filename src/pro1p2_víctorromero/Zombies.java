@@ -1,27 +1,38 @@
 package pro1p2_víctorromero;
 
-public class Zombies {
+import java.io.Serializable;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-    private String name;
-    private int health;
-    private int attackPower;
-    int x;
-    int y;
+public abstract class Zombies extends Thread implements Serializable {
+
+    protected String name;
+    protected int health;
+//    int x;
+//    int y;
+    protected int attackPower;
+    protected ArrayList<Plants> plantas = new ArrayList();
+    protected ArrayList<Zombies> zombies = new ArrayList();
+    protected JLabel zombieJl = new JLabel();
+    protected JPanel game;
+    private static final long SerialVersionUID = 777;
 
     public Zombies() {
     }
 
-    public Zombies(String name, int health, int attackPower) {
-        this.name = name;
-        this.health = 150;
+    public Zombies(String names, int health, int attackPower, JPanel game) {
+        this.name = names;
+        this.health = health;
         this.attackPower = attackPower;
+        this.game = game;
     }
 
-    public String getName() {
+    public String getNames() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setNames(String name) {
         this.name = name;
     }
 
@@ -41,6 +52,40 @@ public class Zombies {
         this.attackPower = attackPower;
     }
 
+    public ArrayList<Plants> getPlantas() {
+        return plantas;
+    }
+
+    public void setPlantas(ArrayList<Plants> plantas) {
+        this.plantas = plantas;
+    }
+
+    public ArrayList<Zombies> getZombies() {
+        return zombies;
+    }
+
+    public void setZombies(ArrayList<Zombies> zombies) {
+        this.zombies = zombies;
+    }
+
+    public JLabel getZombieJl() {
+        return zombieJl;
+    }
+
+    public void setZombieJl(JLabel zombieJl) {
+        this.zombieJl = zombieJl;
+    }
+
+    public JPanel getGame() {
+        return game;
+    }
+
+    public void setGame(JPanel game) {
+        this.game = game;
+    }
+
+    public abstract void attack(Plants p);
+
     @Override
     public String toString() {
         return "Zombies{" + "name=" + name + "\n"
@@ -50,12 +95,10 @@ public class Zombies {
 
     public void attackPlant(Plants plant) {
         plant.setHealth(plant.getHealth() - this.attackPower);
-        System.out.println(this.name + " ha atacado a " + plant.getName() + " por " + this.attackPower + " puntos de daño.");
     }
 
     public void receiveDamage(int damage) {
         this.health -= damage;
-        System.out.println(this.name + " ha recibido " + damage + " puntos de daño");
         if (this.health <= 0) {
             System.out.println(this.name + " ha muerto.");
         }
