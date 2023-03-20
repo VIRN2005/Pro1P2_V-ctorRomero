@@ -18,14 +18,14 @@ public class Girasol extends Plants {
     public Girasol(int produccion, Timer timer) {
         this.produccion = produccion;
         this.timer = timer;
-        timer = new Timer();
+        //timer = new Timer();
     }
 
     private class ProduccionSoleTask extends TimerTask {
         @Override
         public void run() {
             produccion += 25; // Cada 10 segundos, el girasol produce 25 soles
-            System.out.println("El girasol ha producido 25 soles. Total: " + soles);
+           // System.out.println("El girasol ha producido 25 soles. Total: " + soles);
         }
     }
     

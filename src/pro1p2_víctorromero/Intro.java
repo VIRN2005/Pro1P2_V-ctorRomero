@@ -79,7 +79,6 @@ public class Intro extends javax.swing.JFrame {
         Panel_Lanzaguisantes3 = new javax.swing.JLabel();
         Panel_Lanzaguisantes2 = new javax.swing.JLabel();
         Panel_Lanzaguisantes4 = new javax.swing.JLabel();
-        Zombie = new javax.swing.JLabel();
         LG10 = new Casilla(this);
         LG11 = new Casilla(this);
         LG12 = new Casilla(this);
@@ -134,8 +133,6 @@ public class Intro extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         PanelInf_Plants1 = new javax.swing.JPanel();
         Adventure_Background1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         Tutorial_Game = new javax.swing.JFrame();
         Pause = new javax.swing.JButton();
         Sol = new javax.swing.JLabel();
@@ -201,7 +198,6 @@ public class Intro extends javax.swing.JFrame {
         Adventure_Background2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        Zombie1 = new javax.swing.JLabel();
         Pause_Screen_TUTORIAL = new javax.swing.JFrame();
         ResumeGame = new javax.swing.JButton();
         SaveandLeave = new javax.swing.JButton();
@@ -403,12 +399,6 @@ public class Intro extends javax.swing.JFrame {
         PanelSup_Plants1.add(Panel_Lanzaguisantes4);
 
         Adventure_Game.getContentPane().add(PanelSup_Plants1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 100, 500));
-
-        Zombie.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Zombie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
-        Zombie.setText("jLabel4");
-        Zombie.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        Adventure_Game.getContentPane().add(Zombie, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 260, 120, 130));
         Adventure_Game.getContentPane().add(LG10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 120, 130));
 
         LG11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -489,13 +479,6 @@ public class Intro extends javax.swing.JFrame {
 
         Adventure_Background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Background2.jpg"))); // NOI18N
         Adventure_Game.getContentPane().add(Adventure_Background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 620));
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Adventure_Game.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 110, 110));
-
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION3_LanzaGuisantes.gif"))); // NOI18N
-        Adventure_Game.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
 
         Tutorial_Game.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -719,11 +702,6 @@ public class Intro extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/ANIMACION3_LanzaGuisantes.gif"))); // NOI18N
         Survival_Game.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
-
-        Zombie1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Zombie1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
-        Zombie1.setText("jLabel4");
-        Zombie1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         Pause_Screen_TUTORIAL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Pause_Screen_TUTORIAL.setUndecorated(true);
@@ -1389,11 +1367,8 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel VR;
     private javax.swing.JLabel VR_Presents;
     private javax.swing.JLabel VR_PresentsBlack;
-    public javax.swing.JLabel Zombie;
-    private javax.swing.JLabel Zombie1;
     private javax.swing.JComboBox<String> cb_users;
     public javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1408,7 +1383,6 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

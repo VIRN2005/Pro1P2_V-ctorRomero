@@ -45,15 +45,15 @@ public class MoveZombies extends Thread{
     @Override
     public void run() {
         while (flag) {
-            for (int i = 0; i < 500; i++) {
-                label.setLocation(960 - i, 240);
+            for (int i = 0; i < 850; i+=2) {
+                this.label.setLocation(960 - i, this.y);
                 try {
                     Thread.sleep(100);
                 } catch (Exception e) {
 
                 }
             }
-            label.setLocation(960, 240);
+            this.label.setLocation(960, this.y);
         }
     }
 }

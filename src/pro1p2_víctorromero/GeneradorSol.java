@@ -24,7 +24,7 @@ public class GeneradorSol implements Runnable {
     @Override
     public void run() {
         while (start) {
-            sol.setVisible(true);
+
             int x = rand.nextInt(600) + 200;
             int y = rand.nextInt(500);
 
@@ -33,7 +33,8 @@ public class GeneradorSol implements Runnable {
             } catch (InterruptedException ex) {
                 Logger.getLogger(GeneradorSol.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+            sol.setLocation(x, 0);
+            sol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Sun2.png")));
             for (int i = 0; i < y; i++) {
                 sol.setLocation(x, i);
                 try {

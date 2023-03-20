@@ -4,10 +4,9 @@ import javax.swing.JLabel;
 
 public class Casilla extends JLabel {
 
-    private MoveZombies mz;
-    private DisparoLanzaguisantes dl;
-    private Intro gameBoard;
-    protected Juego.TipoPlanta plantaenCasilla = null;
+
+    private final Intro gameBoard;
+    public Juego.TipoPlanta plantaenCasilla = null;
 
     public Casilla(Intro gb) {
         gameBoard = gb;
@@ -32,17 +31,9 @@ public class Casilla extends JLabel {
 
     }
 
-    public Casilla(MoveZombies mz, DisparoLanzaguisantes dl) {
-        this.mz = mz;
-        this.dl = dl;
-    }
 
-    private void verificarShoot() {
-        if (mz.getX() < dl.getX()) {
-            mz.run();
-            dl.run();
-        }
-    }
+
+
 
     private void MouseMoved(java.awt.event.MouseEvent evt) {
         if (plantaenCasilla == null) {
