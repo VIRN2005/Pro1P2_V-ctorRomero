@@ -15,7 +15,7 @@ public class Lanzaguisantes extends Plants {
     }
 
     public Lanzaguisantes(JPanel paneles, int x, int y, JLabel spot, String name, int sunCost, int health, int attackPower) {
-        super("Lanzaguisantes", 100, 300, 25);
+        super();
         this.paneles = paneles;
         this.x = x;
         this.y = y;

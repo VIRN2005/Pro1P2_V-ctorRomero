@@ -1,27 +1,42 @@
 package pro1p2_víctorromero;
 
-public class Plants {
+import java.awt.EventQueue;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public abstract class Plants extends Thread implements Serializable {
 
     protected String name;
     protected int sunCost;
     protected int health;
     protected int attackPower;
+    protected JPanel panel;
+    protected JLabel plantLabel = new JLabel();
+    protected int CostoSoles;
+    protected ArrayList<Zombies> zombies = new ArrayList();
+    protected JLabel spot = new JLabel();
 
     public Plants() {
     }
 
-    public Plants(String name, int sunCost, int health, int attackPower) {
+    public Plants(String name, int sunCost, int health, int attackPower, JPanel panel, int CostoSoles) {
         this.name = name;
         this.sunCost = sunCost;
         this.health = health;
         this.attackPower = attackPower;
+        this.panel = panel;
+        this.CostoSoles = CostoSoles;
     }
 
-    public String getName() {
+    public String getName1() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName1(String name) {
         this.name = name;
     }
 
@@ -49,6 +64,30 @@ public class Plants {
         this.attackPower = attackPower;
     }
 
+    public JLabel getPlantLabel() {
+        return plantLabel;
+    }
+
+    public void setPlantLabel(JLabel plantLabel) {
+        this.plantLabel = plantLabel;
+    }
+
+    public ArrayList<Zombies> getZombies() {
+        return zombies;
+    }
+
+    public void setZombies(ArrayList<Zombies> zombies) {
+        this.zombies = zombies;
+    }
+
+    public JLabel getSpot() {
+        return spot;
+    }
+
+    public void setSpot(JLabel spot) {
+        this.spot = spot;
+    }
+
     @Override
     public String toString() {
         return "Plants{" + "name=" + name + "\n"
@@ -67,6 +106,24 @@ public class Plants {
         System.out.println(this.name + " ha recibido " + damage + " puntos de daño.");
         if (this.health <= 0) {
             System.out.println(this.name + " ha muerto.");
+            run();
+        }
+    }
+
+    public void run() {
+
+        while (health > 0) {
+            if (health <= 0) {
+                EventQueue.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        plantLabel.setVisible(false);
+                        panel.remove(plantLabel);
+                        spot.setEnabled(true);
+
+                    }
+                });
+            }
         }
     }
 }

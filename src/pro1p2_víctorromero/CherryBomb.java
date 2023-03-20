@@ -1,5 +1,8 @@
 package pro1p2_víctorromero;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class CherryBomb extends Plants {
 
     private int radioExplosion;
@@ -8,9 +11,15 @@ public class CherryBomb extends Plants {
         super();
     }
 
-    public CherryBomb(int radioExplosion, String name, int sunCost, int health, int attackPower) {
-        super(name, sunCost, health, attackPower);
+    public CherryBomb(int x, int y, JPanel panel, JLabel spot) {
+        super();
+        this.sunCost = 150;
+        this.attackPower = 300;
         this.radioExplosion = radioExplosion;
+        this.panel = panel;
+        this.panel = panel;
+        this.plantLabel = new JLabel();
+
     }
 
     public int getRadioExplosion() {
@@ -21,4 +30,12 @@ public class CherryBomb extends Plants {
         this.radioExplosion = radioExplosion;
     }
 
+    public void action() {
+        for (Zombies z : zombies) {
+            z.receiveDamage(z.getAttackPower());
+            z.getZombieJl().setVisible(false);
+
+        }
+        this.attackPower = 0;
+    }
 }

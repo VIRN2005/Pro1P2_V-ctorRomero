@@ -9,7 +9,7 @@ public class Girasol extends Plants {
     }
 
     public Girasol(int produccion, String name, int sunCost, int health, int attackPower) {
-        super(name, sunCost, health, attackPower);
+        super();
         this.produccion = produccion;
     }
 

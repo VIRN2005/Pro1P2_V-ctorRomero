@@ -1349,7 +1349,7 @@ public class Intro extends javax.swing.JFrame {
     //MoveZombies
     private boolean poner = false;
     private JLabel lugar = new JLabel();
-    private Zombies zombies = new Zombies();
+    private Zombies zombies;
     private boolean vidaZombies = true;
 
     //Songs

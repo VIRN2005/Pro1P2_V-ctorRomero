@@ -10,7 +10,7 @@ import java.io.File;
 
 public class Audio extends Thread {
 
-    private AudioInputStream audioInputStream;
+    private AudioInputStream audioIS;
     private Clip clip;
     private File file;
 
@@ -22,42 +22,12 @@ public class Audio extends Thread {
 
     }
 
-    public void run() {
-        while (true) {
-            try {
-                if (file.exists()) {
-
-                    audioInputStream = AudioSystem.getAudioInputStream(file);
-
-                    clip = AudioSystem.getClip();
-                    clip.open(audioInputStream);
-                    clip.loop(Clip.LOOP_CONTINUOUSLY);
-
-                    int time2 = (int) clip.getMicrosecondLength() / 1000;
-
-                    int time3 = 0;
-                    while (time3 < time2) {
-                        Thread.sleep(1);
-                        time3++;
-
-                    }
-
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }
-
-    }
-
     public AudioInputStream getAudioInputStream() {
-        return audioInputStream;
+        return audioIS;
     }
 
     public void setAudioInputStream(AudioInputStream audioInputStream) {
-        this.audioInputStream = audioInputStream;
+        this.audioIS = audioInputStream;
     }
 
     public Clip getClip() {
@@ -78,7 +48,31 @@ public class Audio extends Thread {
 
     @Override
     public String toString() {
-        return "AudioThread{" + "audioInputStream=" + audioInputStream + ", clip=" + clip + ", file=" + file + '}';
+        return "AudioThread{" + "audioInputStream=" + audioIS + ", clip=" + clip + ", file=" + file + '}';
     }
 
+    public void run() {
+        boolean banderita = true;
+        while (banderita) {
+            try {
+                if (file.exists()) {
+                    audioIS = AudioSystem.getAudioInputStream(file);
+
+                    clip = AudioSystem.getClip();
+                    clip.open(audioIS);
+                    clip.loop(Clip.LOOP_CONTINUOUSLY);
+
+                    int time2 = (int) clip.getMicrosecondLength() / 1000;
+                    int time3 = 0;
+
+                    while (time3 < time2) {
+                        Thread.sleep(1);
+                        time3++;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

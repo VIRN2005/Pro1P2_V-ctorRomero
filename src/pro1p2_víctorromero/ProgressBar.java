@@ -26,12 +26,12 @@ public class ProgressBar extends Thread implements Serializable {
         super();
     }
 
-    public ProgressBar(JProgressBar pb, JLabel label, JPanel barPanel) {
-        this.pb = pb;
+    public ProgressBar(JProgressBar bar, JLabel label, JPanel barPanel) {
+        this.pb = bar;
         this.label = label;
         this.barPanel = barPanel;
         inicial = label.getX();
-        pb.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        bar.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
     }
 
     public int getLimit() {
@@ -77,9 +77,7 @@ public class ProgressBar extends Thread implements Serializable {
 
     public void run() {
         try {
-
             Thread.sleep(15000);
-
             final int movimiento = pb.getWidth() / limit;
             final int inicialPos = inicial;
             pb.setMaximum(limit);
@@ -89,10 +87,8 @@ public class ProgressBar extends Thread implements Serializable {
                 for (Zombies z : zombies) {
                     if (z.getHealth() <= 0) {
                         value++;
-
                     }
                 }
-
                 final int value2 = value;
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
@@ -104,15 +100,12 @@ public class ProgressBar extends Thread implements Serializable {
                             barPanel.add(label, new AbsoluteConstraints(pb.getX(), label.getY(), label.getWidth(), label.getHeight()), 0);
                         }
                         barPanel.repaint();
-
                     }
-
                 });
                 Thread.sleep(100);
                 pb.setValue(value2);
                 Thread.sleep(100);
             }
-
         } catch (InterruptedException ex) {
             Logger.getLogger(ProgressBar.class.getName()).log(Level.SEVERE, null, ex);
         }

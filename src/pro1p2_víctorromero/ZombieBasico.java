@@ -16,4 +16,13 @@ public class ZombieBasico extends Zombies {
         game = pan;
     }
 
+    @Override
+    public void attack(Plants p) {
+        p.receiveDamage(attackPower);
+
+        if (p.getHealth() <= 0) {
+            plantas.remove(p);
+        }
+    }
+
 }
