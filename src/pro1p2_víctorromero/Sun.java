@@ -1,6 +1,6 @@
 package pro1p2_víctorromero;
 
-public class Sun {
+public class Sun{
     
     // Atributos de la clase
     private int value;      // Valor en soles del objeto
