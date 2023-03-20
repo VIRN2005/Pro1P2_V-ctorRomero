@@ -10,10 +10,7 @@
 //import javax.swing.JLabel;
 //import javax.swing.JPanel;
 
-/**
- *
- * @author HP
- */
+
 //public class Click extends JLabel implements Serializable {
 //
 //    private transient JPanel panel;

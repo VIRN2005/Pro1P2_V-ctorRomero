@@ -50,7 +50,7 @@ public class GenerarZombies extends Thread {
 
         while (flag) {
             try {
-                Thread.sleep(Espera() + 5000);
+                Thread.sleep(Espera() + 8000);
             } catch (Exception e) {
 
             }

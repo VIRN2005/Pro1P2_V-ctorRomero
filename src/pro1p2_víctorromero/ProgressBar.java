@@ -17,7 +17,7 @@ public class ProgressBar extends Thread implements Serializable {
     private static final long SerialVersionUID = 348L;
     private ArrayList<Zombies> zombies = new ArrayList();
     private JProgressBar pb;
-    private JLabel label;
+    private JLabel img;
     private transient JPanel barPanel;
     private int limit;
     private int inicial;
@@ -28,7 +28,7 @@ public class ProgressBar extends Thread implements Serializable {
 
     public ProgressBar(JProgressBar bar, JLabel label, JPanel barPanel) {
         this.pb = bar;
-        this.label = label;
+        this.img = label;
         this.barPanel = barPanel;
         inicial = label.getX();
         bar.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -58,12 +58,12 @@ public class ProgressBar extends Thread implements Serializable {
         this.pb = pb;
     }
 
-    public JLabel getLabel() {
-        return label;
+    public JLabel getImg() {
+        return img;
     }
 
-    public void setLabel(JLabel label) {
-        this.label = label;
+    public void setImg(JLabel label) {
+        this.img = label;
         inicial = label.getX();
     }
 
@@ -93,11 +93,11 @@ public class ProgressBar extends Thread implements Serializable {
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        label.setLocation(inicialPos - (movimiento * value2), label.getY());
-                        barPanel.add(label, new AbsoluteConstraints(inicialPos - (movimiento * value2), label.getY(), label.getWidth(), label.getHeight()), 0);
+                        img.setLocation(inicialPos - (movimiento * value2), img.getY());
+                        barPanel.add(img, new AbsoluteConstraints(inicialPos - (movimiento * value2), img.getY(), img.getWidth(), img.getHeight()), 0);
                         if (value2 == pb.getMaximum()) {
-                            label.setLocation(inicialPos - (movimiento * value2), label.getY());
-                            barPanel.add(label, new AbsoluteConstraints(pb.getX(), label.getY(), label.getWidth(), label.getHeight()), 0);
+                            img.setLocation(inicialPos - (movimiento * value2), img.getY());
+                            barPanel.add(img, new AbsoluteConstraints(pb.getX(), img.getY(), img.getWidth(), img.getHeight()), 0);
                         }
                         barPanel.repaint();
                     }
