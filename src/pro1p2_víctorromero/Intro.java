@@ -4,6 +4,7 @@
  */
 package pro1p2_víctorromero;
 
+import java.awt.Color;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -11,6 +12,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -23,7 +25,7 @@ import javax.swing.JOptionPane;
 public class Intro extends javax.swing.JFrame {
 
     private Intro Intro;
-    private Juego gameplay;
+    protected Juego gameplay;
 
     /**
      * Creates new form Intro
@@ -73,42 +75,46 @@ public class Intro extends javax.swing.JFrame {
         Adventure_Game = new javax.swing.JFrame();
         Pause1 = new javax.swing.JButton();
         Sol1 = new javax.swing.JLabel();
+        PanelSup_Plants1 = new javax.swing.JPanel();
+        Panel_Lanzaguisantes3 = new javax.swing.JLabel();
+        Panel_Lanzaguisantes2 = new javax.swing.JLabel();
+        Panel_Lanzaguisantes4 = new javax.swing.JLabel();
         Zombie = new javax.swing.JLabel();
-        LG10 = new javax.swing.JLabel();
-        LG11 = new javax.swing.JLabel();
-        LG12 = new javax.swing.JLabel();
-        LG13 = new javax.swing.JLabel();
-        LG14 = new javax.swing.JLabel();
-        LG15 = new javax.swing.JLabel();
-        LG18 = new javax.swing.JLabel();
-        LG19 = new javax.swing.JLabel();
-        LG20 = new javax.swing.JLabel();
-        LG17 = new javax.swing.JLabel();
-        LG21 = new javax.swing.JLabel();
-        LG22 = new javax.swing.JLabel();
-        LG23 = new javax.swing.JLabel();
-        LG24 = new javax.swing.JLabel();
-        LG25 = new javax.swing.JLabel();
-        LG26 = new javax.swing.JLabel();
-        LG27 = new javax.swing.JLabel();
-        LG28 = new javax.swing.JLabel();
-        LG29 = new javax.swing.JLabel();
-        LG30 = new javax.swing.JLabel();
-        LG31 = new javax.swing.JLabel();
-        LG32 = new javax.swing.JLabel();
-        LG33 = new javax.swing.JLabel();
-        LG34 = new javax.swing.JLabel();
-        LG35 = new javax.swing.JLabel();
-        LG36 = new javax.swing.JLabel();
-        LG37 = new javax.swing.JLabel();
-        LG38 = new javax.swing.JLabel();
-        LG39 = new javax.swing.JLabel();
-        LG41 = new javax.swing.JLabel();
-        LG42 = new javax.swing.JLabel();
-        LG43 = new javax.swing.JLabel();
-        LG44 = new javax.swing.JLabel();
-        LG45 = new javax.swing.JLabel();
-        LG46 = new javax.swing.JLabel();
+        LG10 = new Casilla(this);
+        LG11 = new Casilla(this);
+        LG12 = new Casilla(this);
+        LG13 = new Casilla(this);
+        LG14 = new Casilla(this);
+        LG15 = new Casilla(this);
+        LG18 = new Casilla(this);
+        LG19 = new Casilla(this);
+        LG20 = new Casilla(this);
+        LG17 = new Casilla(this);
+        LG21 = new Casilla(this);
+        LG22 = new Casilla(this);
+        LG23 = new Casilla(this);
+        LG24 = new Casilla(this);
+        LG25 = new Casilla(this);
+        LG26 = new Casilla(this);
+        LG27 = new Casilla(this);
+        LG28 = new Casilla(this);
+        LG29 = new Casilla(this);
+        LG30 = new Casilla(this);
+        LG31 = new Casilla(this);
+        LG32 = new Casilla(this);
+        LG33 = new Casilla(this);
+        LG34 = new Casilla(this);
+        LG35 = new Casilla(this);
+        LG36 = new Casilla(this);
+        LG37 = new Casilla(this);
+        LG38 = new Casilla(this);
+        LG39 = new Casilla(this);
+        LG41 = new Casilla(this);
+        LG42 = new Casilla(this);
+        LG43 = new Casilla(this);
+        LG44 = new Casilla(this);
+        LG45 = new Casilla(this);
+        LG46 = new Casilla(this);
         LG47 = new javax.swing.JLabel();
         LG48 = new javax.swing.JLabel();
         LG49 = new javax.swing.JLabel();
@@ -121,15 +127,11 @@ public class Intro extends javax.swing.JFrame {
         LG56 = new javax.swing.JLabel();
         LG57 = new javax.swing.JLabel();
         LG58 = new javax.swing.JLabel();
-        LG59 = new javax.swing.JLabel();
+        LG59 = new Casilla(this);
         jLabel6 = new javax.swing.JLabel();
         SunBoard1 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        PanelSup_Plants1 = new javax.swing.JPanel();
-        Panel_Lanzaguisantes3 = new javax.swing.JLabel();
-        Panel_Lanzaguisantes2 = new javax.swing.JLabel();
-        Panel_Lanzaguisantes4 = new javax.swing.JLabel();
         PanelInf_Plants1 = new javax.swing.JPanel();
         Adventure_Background1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -137,7 +139,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game = new javax.swing.JFrame();
         Pause = new javax.swing.JButton();
         Sol = new javax.swing.JLabel();
-        LG1 = new javax.swing.JLabel();
+        LG1 = new Casilla(this);
         LG2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LG3 = new javax.swing.JLabel();
@@ -368,6 +370,43 @@ public class Intro extends javax.swing.JFrame {
         });
         Adventure_Game.getContentPane().add(Sol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
 
+        PanelSup_Plants1.setBackground(new java.awt.Color(55, 47, 0));
+        PanelSup_Plants1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        Panel_Lanzaguisantes3.setBackground(new java.awt.Color(51, 51, 255));
+        Panel_Lanzaguisantes3.setForeground(new java.awt.Color(255, 255, 255));
+        Panel_Lanzaguisantes3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Panel_Lanzaguisantes3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Tarjeta_lanzaguisantes.png"))); // NOI18N
+        Panel_Lanzaguisantes3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Panel_Lanzaguisantes3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes3MouseClicked(evt);
+            }
+        });
+        PanelSup_Plants1.add(Panel_Lanzaguisantes3);
+
+        Panel_Lanzaguisantes2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Panel_Lanzaguisantes2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/girasol_carta.png"))); // NOI18N
+        Panel_Lanzaguisantes2.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Panel_Lanzaguisantes2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes2MouseClicked(evt);
+            }
+        });
+        PanelSup_Plants1.add(Panel_Lanzaguisantes2);
+
+        Panel_Lanzaguisantes4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Panel_Lanzaguisantes4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/cereza_carta.png"))); // NOI18N
+        Panel_Lanzaguisantes4.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Panel_Lanzaguisantes4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_Lanzaguisantes4MouseClicked(evt);
+            }
+        });
+        PanelSup_Plants1.add(Panel_Lanzaguisantes4);
+
+        Adventure_Game.getContentPane().add(PanelSup_Plants1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 100, 500));
+
         Zombie.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Zombie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Zombie1.gif"))); // NOI18N
         Zombie.setText("jLabel4");
@@ -435,7 +474,6 @@ public class Intro extends javax.swing.JFrame {
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(255, 255, 153));
         jTextField2.setFont(new java.awt.Font("Ghostphobia", 1, 45)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("100");
         jTextField2.setBorder(null);
@@ -447,65 +485,6 @@ public class Intro extends javax.swing.JFrame {
         SunBoard1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 10, 110, 40));
 
         Adventure_Game.getContentPane().add(SunBoard1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 170, 60));
-
-        PanelSup_Plants1.setBackground(new java.awt.Color(55, 47, 0));
-        PanelSup_Plants1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        Panel_Lanzaguisantes3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Panel_Lanzaguisantes3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Tarjeta_lanzaguisantes.png"))); // NOI18N
-        Panel_Lanzaguisantes3.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        Panel_Lanzaguisantes3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes3MouseDragged(evt);
-            }
-        });
-        Panel_Lanzaguisantes3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes3MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes3MouseReleased(evt);
-            }
-        });
-        PanelSup_Plants1.add(Panel_Lanzaguisantes3);
-
-        Panel_Lanzaguisantes2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Panel_Lanzaguisantes2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/girasol_carta.png"))); // NOI18N
-        Panel_Lanzaguisantes2.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        Panel_Lanzaguisantes2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes2MouseDragged(evt);
-            }
-        });
-        Panel_Lanzaguisantes2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes2MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes2MouseReleased(evt);
-            }
-        });
-        PanelSup_Plants1.add(Panel_Lanzaguisantes2);
-
-        Panel_Lanzaguisantes4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Panel_Lanzaguisantes4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/cereza_carta.png"))); // NOI18N
-        Panel_Lanzaguisantes4.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        Panel_Lanzaguisantes4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes4MouseDragged(evt);
-            }
-        });
-        Panel_Lanzaguisantes4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes4MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes4MouseReleased(evt);
-            }
-        });
-        PanelSup_Plants1.add(Panel_Lanzaguisantes4);
-
-        Adventure_Game.getContentPane().add(PanelSup_Plants1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 100, 500));
 
         PanelInf_Plants1.setBackground(new java.awt.Color(86, 86, 2));
         PanelInf_Plants1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1040,55 +1019,6 @@ public class Intro extends javax.swing.JFrame {
         
     }//GEN-LAST:event_AdventureMouseClicked
 
-    private void Panel_Lanzaguisantes2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes2MouseDragged
-        Panel_Lanzaguisantes2.getX();
-        int x = evt.getXOnScreen();
-        Panel_Lanzaguisantes2.getY();
-        int y = evt.getYOnScreen();
-
-        Panel_Lanzaguisantes2.setLocation(x - (4 * xMouse), y - (4 * yMouse));
-    }//GEN-LAST:event_Panel_Lanzaguisantes2MouseDragged
-
-    private void Panel_Lanzaguisantes2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes2MousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_Panel_Lanzaguisantes2MousePressed
-
-    private void Panel_Lanzaguisantes2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes2MouseReleased
-        Panel_Lanzaguisantes2.setLocation(40, 59);
-
-        LG10.setIcon(new ImageIcon("./Images\\ANIMACION3_LanzaGuisantes.gif"));
-    }//GEN-LAST:event_Panel_Lanzaguisantes2MouseReleased
-
-    private void Panel_Lanzaguisantes3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes3MouseDragged
-        Panel_Lanzaguisantes2.getX();
-        int x = evt.getXOnScreen();
-        Panel_Lanzaguisantes2.getY();
-        int y = evt.getYOnScreen();
-
-        Panel_Lanzaguisantes2.setLocation(x - (4 * xMouse), y - (4 * yMouse));
-    }//GEN-LAST:event_Panel_Lanzaguisantes3MouseDragged
-
-    private void Panel_Lanzaguisantes3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes3MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes3MousePressed
-
-    private void Panel_Lanzaguisantes3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes3MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes3MouseReleased
-
-    private void Panel_Lanzaguisantes4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes4MouseDragged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes4MouseDragged
-
-    private void Panel_Lanzaguisantes4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes4MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes4MousePressed
-
-    private void Panel_Lanzaguisantes4MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes4MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes4MouseReleased
-
     private void SolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SolMouseClicked
         cantSoles += 25;
         jLabel1.setText(cantSoles + "");
@@ -1266,6 +1196,20 @@ public class Intro extends javax.swing.JFrame {
         gameplay.clickSol();
     }//GEN-LAST:event_Sol1MouseClicked
 
+    private void Panel_Lanzaguisantes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes3MouseClicked
+        Panel_Lanzaguisantes3.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.blue));
+        gameplay.plantar=Juego.TipoPlanta.GUISANTE;
+    }//GEN-LAST:event_Panel_Lanzaguisantes3MouseClicked
+
+    private void Panel_Lanzaguisantes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes2MouseClicked
+        Panel_Lanzaguisantes2.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.blue));
+        gameplay.plantar=Juego.TipoPlanta.GIRASOL;
+    }//GEN-LAST:event_Panel_Lanzaguisantes2MouseClicked
+
+    private void Panel_Lanzaguisantes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes4MouseClicked
+        Panel_Lanzaguisantes4.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.blue));
+        gameplay.plantar=Juego.TipoPlanta.CHERRYBOMB;    }//GEN-LAST:event_Panel_Lanzaguisantes4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1364,7 +1308,7 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel Adventure;
     private javax.swing.JLabel Adventure_Background1;
     private javax.swing.JLabel Adventure_Background2;
-    private javax.swing.JFrame Adventure_Game;
+    public javax.swing.JFrame Adventure_Game;
     private javax.swing.JFrame EA_Presents;
     private javax.swing.JLabel EA_VR;
     private javax.swing.JLabel EA_VRBlack;

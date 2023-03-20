@@ -14,18 +14,26 @@ import javax.swing.JFrame;
  */
 public class Juego {
 
+    static enum TipoPlanta {
+        GUISANTE,
+        GIRASOL,
+        CHERRYBOMB,
+        NINGUNO
+    }
+
     private Intro aventura;
     //Coords
     private int xMouse;
     private int yMouse;
     private int cantSoles = 100;
+    protected TipoPlanta plantar = TipoPlanta.NINGUNO;
 
     //Thread Cracion de Soles
     GeneradorSol gs;
     Thread t2 = new Thread(gs);
 
-    ArrayList<Plants> plantas = new ArrayList<>();
-    ArrayList<Zombies> zombie = new ArrayList<>();
+    protected ArrayList<Plants> plantas = new ArrayList<>();
+    protected ArrayList<Zombies> zombie = new ArrayList<>();
 
     public Juego(Intro aven) {
         aventura = aven;
@@ -38,34 +46,49 @@ public class Juego {
 
     public void setCantSoles(int cantSoles) {
         this.cantSoles = cantSoles;
+        aventura.jTextField2.setText(cantSoles + "");
     }
 
-    private void generarsol(){
-        GeneradorSol gs = new GeneradorSol(aventura.Sol1, true);
+    private void generarsol() {
+        gs = new GeneradorSol(aventura.Sol1, true);
         t2 = new Thread(gs);
-        t2.start();        
+        t2.start();
         VerifPlants();
     }
-    
-    public void clickSol(){
+
+    public void clickSol() {
         int soles = getCantSoles();
-        soles+=25;
+        soles += 25;
         setCantSoles(soles);
         aventura.jTextField2.setText(soles + "");
 
         aventura.Sol1.setVisible(false);
-        VerifPlants();        
+        VerifPlants();
     }
-    public void creanLanzaguisantes() {
 
+    public void creanLanzaguisantes(Casilla ca) {
+        int soles = getCantSoles();
+        soles -= 100;
+        setCantSoles(soles);
+        VerifPlants();
+        Lanzaguisantes guisante = new Lanzaguisantes(aventura, ca, "Lanza guisante", 100, 125, 25);
+        guisante.crearSpot();
+
+        plantas.add(guisante);
     }
 
     public void creanGirasol() {
-
+        int soles = getCantSoles();
+        soles -= 50;
+        setCantSoles(soles);
+        VerifPlants();
     }
 
     public void creanCherryBomb() {
-
+        int soles = getCantSoles();
+        soles -= 150;
+        setCantSoles(soles);
+        VerifPlants();
     }
 
     public void creaZombie() {
@@ -88,6 +111,6 @@ public class Juego {
         } else {
             aventura.Panel_Lanzaguisantes4.setEnabled(false);
         }
-        
+
     }
 }
