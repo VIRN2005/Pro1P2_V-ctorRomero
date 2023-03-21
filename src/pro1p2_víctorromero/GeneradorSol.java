@@ -14,9 +14,11 @@ public class GeneradorSol implements Runnable {
     private Random rand = new Random();
 
     public GeneradorSol() {
+        super();
     }
 
     public GeneradorSol(JLabel sol, boolean start) {
+        super();
         this.sol = sol;
         this.start = start;
     }
@@ -43,9 +45,9 @@ public class GeneradorSol implements Runnable {
                     Logger.getLogger(GeneradorSol.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            
-            System.out.println("x" + x);
-            System.out.println("y" + y);
+
+//            System.out.println("x" + x);
+//            System.out.println("y" + y);
         }
     }
 

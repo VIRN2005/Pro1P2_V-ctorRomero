@@ -15,7 +15,6 @@ import javax.swing.JLabel;
  */
 public class Juego {
 
-
     public static enum TipoPlanta {
         GUISANTE,
         GIRASOL,
@@ -23,10 +22,21 @@ public class Juego {
         NINGUNO
     }
 
-    private final Intro aventura;
+    private Intro aventura;
     private final GenerarZombies genZombies;
-    //Coords
 
+    public Intro getAventura() {
+        return aventura;
+    }
+
+    public void setAventura(Intro aventura) {
+        this.aventura = aventura;
+    }
+
+
+    
+    //Coords
+    private int lines;
     private int cantSoles = 100;
     protected TipoPlanta plantar = TipoPlanta.NINGUNO;
 
@@ -46,11 +56,12 @@ public class Juego {
     protected ArrayList<Zombies> zombie5 = new ArrayList<>();
 
     public Juego(Intro aven) {
+        lines = 5;
         aventura = aven;
         generarsol();
-        genZombies = new GenerarZombies(this,5);
+        genZombies = new GenerarZombies(this, lines);
         Iniciar();
-        
+
     }
 
     public int getCantSoles() {
@@ -60,6 +71,14 @@ public class Juego {
     public void setCantSoles(int cantSoles) {
         this.cantSoles = cantSoles;
         aventura.jTextField2.setText(cantSoles + "");
+    }
+
+    public int getLines() {
+        return lines;
+    }
+
+    public void setLines(int lines) {
+        this.lines = lines;
     }
 
     private void generarsol() {
@@ -87,11 +106,16 @@ public class Juego {
         Lanzaguisantes guisante = new Lanzaguisantes(aventura, ca, "Lanza guisante", 100, 125, 25);
         guisante.crearSpot();
         switch (ca.getY()) {
-            case 60 -> plantas1.add(guisante);
-            case 160 -> plantas2.add(guisante);
-            case 260 -> plantas3.add(guisante);
-            case 360 -> plantas4.add(guisante);
-            case 460 -> plantas5.add(guisante);
+            case 60 ->
+                plantas1.add(guisante);
+            case 160 ->
+                plantas2.add(guisante);
+            case 260 ->
+                plantas3.add(guisante);
+            case 360 ->
+                plantas4.add(guisante);
+            case 460 ->
+                plantas5.add(guisante);
 
         }
 
@@ -114,44 +138,65 @@ public class Juego {
     public void creaZombieNormal(int linea) {
         int ycord = 260;
         switch (linea) {
-            case 1 -> ycord = 60;
-            case 2 -> ycord = 160;
-            case 3 -> ycord = 260;
-            case 4 -> ycord = 360;
-            case 5 -> ycord = 460;
-        }        
-        ZombieBasico basico = new ZombieBasico(aventura,ycord);
+            case 1 ->
+                ycord = 60;
+            case 2 ->
+                ycord = 160;
+            case 3 ->
+                ycord = 260;
+            case 4 ->
+                ycord = 360;
+            case 5 ->
+                ycord = 460;
+        }
+        ZombieBasico basico = new ZombieBasico(aventura, ycord);
         basico.salirAlCampo();
         switch (linea) {
-            case 1 -> zombie1.add(basico);
-            case 2 -> zombie2.add(basico);
-            case 3 -> zombie3.add(basico);
-            case 4 -> zombie4.add(basico);
-            case 5 -> zombie5.add(basico);
+            case 1 ->
+                zombie1.add(basico);
+            case 2 ->
+                zombie2.add(basico);
+            case 3 ->
+                zombie3.add(basico);
+            case 4 ->
+                zombie4.add(basico);
+            case 5 ->
+                zombie5.add(basico);
         }
-        
-                        System.out.println("Sale sombie normal en linea "+linea);
+
+        System.out.println("Sale sombie normal en linea " + linea);
 
     }
+
     public void creaZombieCono(int linea) {
         int ycord = 260;
         switch (linea) {
-            case 1 -> ycord = 60;
-            case 2 -> ycord = 160;
-            case 3 -> ycord = 260;
-            case 4 -> ycord = 360;
-            case 5 -> ycord = 460;
-        }        
-        ZombieBasico basico = new ZombieBasico(aventura,ycord);
-        basico.salirAlCampo();
-        switch (linea) {
-            case 1 -> zombie1.add(basico);
-            case 2 -> zombie2.add(basico);
-            case 3 -> zombie3.add(basico);
-            case 4 -> zombie4.add(basico);
-            case 5 -> zombie5.add(basico);
+            case 1 ->
+                ycord = 60;
+            case 2 ->
+                ycord = 160;
+            case 3 ->
+                ycord = 260;
+            case 4 ->
+                ycord = 360;
+            case 5 ->
+                ycord = 460;
         }
-                           System.out.println("Sale sombie Cono en linea "+linea);
+        ZombieCaraCono cono = new ZombieCaraCono(aventura, ycord);
+        cono.salirAlCampo();
+        switch (linea) {
+            case 1 ->
+                zombie1.add(cono);
+            case 2 ->
+                zombie2.add(cono);
+            case 3 ->
+                zombie3.add(cono);
+            case 4 ->
+                zombie4.add(cono);
+            case 5 ->
+                zombie5.add(cono);
+        }
+        System.out.println("Sale sombie Cono en linea " + linea);
 
     }
 
@@ -173,7 +218,8 @@ public class Juego {
         }
 
     }
+
     private void Iniciar() {
         genZombies.start();
-    }    
+     }
 }

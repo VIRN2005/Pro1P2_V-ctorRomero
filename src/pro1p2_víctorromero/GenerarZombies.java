@@ -32,6 +32,7 @@ public class GenerarZombies extends Thread {
     private int tiempoEsperaNormal = 6 * 3000;
 
     public GenerarZombies(Juego jgo, int lin) {
+        super();
         juego = jgo;
         lineas = lin;
         if (lin == 1) {
@@ -47,13 +48,19 @@ public class GenerarZombies extends Thread {
 
     @Override
     public void run() {
+        try {
+            Thread.sleep(Espera() + 4000);
+        } catch (Exception e) {
 
+        }
+        GenerarZombieNormal();
         while (flag) {
             try {
-                Thread.sleep(Espera() + 8000);
+                Thread.sleep(Espera() + 1000);
             } catch (Exception e) {
 
             }
+            System.out.println("Restantes: " + numZombiesNormal + numZombiesCono);
             if (numZombiesNormal + numZombiesCono > 0) {
                 if (numZombiesNormal == 0) {
                     GenerarZombieCono();
@@ -137,6 +144,7 @@ public class GenerarZombies extends Thread {
     private void GenerarZombieNormal() {
         numZombiesNormal -= 1;
         coutZombiesNormal += 1;
+//        juego.creaZombieNormal(Linea());
         juego.creaZombieNormal(Linea());
     }
 
