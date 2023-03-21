@@ -19,8 +19,29 @@ public abstract class Plants extends Thread implements Serializable {
     protected int CostoSoles;
     protected ArrayList<Zombies> zombies = new ArrayList();
     protected JLabel spot = new JLabel();
-
+    private Intro intro;
+    private Casilla cas;
+    private int x;
+    private int y;
+    private DisparoLanzaguisantes gm = null;
+    private RevisaLinea revisaLinea1;
+    private RevisaLinea revisaLinea2;
+    private RevisaLinea revisaLinea3;
+    private RevisaLinea revisaLinea4;
+    private RevisaLinea revisaLinea5;
     public Plants() {
+    }
+
+    public Plants(Intro intr, Casilla ca, String name, int sunCost, int health, int attackPower, int costoSoles) {
+        this.intro = intr;
+        cas = ca;
+
+        this.name = name;
+        this.sunCost = sunCost;
+        this.health = health;
+        this.attackPower = attackPower;
+        this.CostoSoles = costoSoles;
+        revisar();
     }
 
     public Plants(String name, int sunCost, int health, int attackPower, JPanel panel, int CostoSoles) {
@@ -32,8 +53,32 @@ public abstract class Plants extends Thread implements Serializable {
         this.CostoSoles = CostoSoles;
     }
 
+    public DisparoLanzaguisantes getGm() {
+        return gm;
+    }
+
+    public void setGm(DisparoLanzaguisantes gm) {
+        this.gm = gm;
+    }
+
     public String getName1() {
         return name;
+    }
+
+    public Intro getIntro() {
+        return intro;
+    }
+
+    public void setIntro(Intro intro) {
+        this.intro = intro;
+    }
+
+    public Casilla getCas() {
+        return cas;
+    }
+
+    public void setCas(Casilla cas) {
+        this.cas = cas;
     }
 
     public void setName1(String name) {
@@ -106,8 +151,20 @@ public abstract class Plants extends Thread implements Serializable {
         System.out.println(this.name + " ha recibido " + damage + " puntos de daño.");
         if (this.health <= 0) {
             System.out.println(this.name + " ha muerto.");
-            run();
+            //run();
         }
+    }
+
+    public void destruir() {
+        if (gm != null) {
+            gm.setFlag(false);
+        }
+        //intro = null;
+        cas.setIcon(null);
+        cas.plantaenCasilla = Juego.TipoPlanta.NINGUNO;
+        //cas = null;
+        //gm = null;
+        spot.setVisible(false);
     }
 
     public void run() {
@@ -124,6 +181,21 @@ public abstract class Plants extends Thread implements Serializable {
                     }
                 });
             }
+        }
+    }
+
+    private void revisar() {
+        if (intro.getGameplay().getLines() == 5) {
+            revisaLinea1 = new RevisaLinea(intro.getGameplay(),this,1);
+            revisaLinea2 = new RevisaLinea(intro.getGameplay(),this, 2);
+            revisaLinea3 = new RevisaLinea(intro.getGameplay(),this, 3);
+            revisaLinea4 = new RevisaLinea(intro.getGameplay(),this, 4);
+            revisaLinea5 = new RevisaLinea(intro.getGameplay(),this, 5);
+            revisaLinea1.start();
+            revisaLinea2.start();
+            revisaLinea3.start();
+            revisaLinea4.start();
+            revisaLinea5.start();            
         }
     }
 }
