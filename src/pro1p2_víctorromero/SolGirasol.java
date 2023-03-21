@@ -7,18 +7,29 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class GeneradorSol implements Runnable {
+public class SolGirasol extends Thread{
 
     private JLabel sol;
     private boolean start;
     private Random rand = new Random();
-
-    public GeneradorSol() {
+    private int xg;
+    private int yg;
+    public SolGirasol() {
         super();
     }
 
-    public GeneradorSol(JLabel sol, boolean start) {
+    public boolean isStart() {
+        return start;
+    }
+
+    public void setStart(boolean start) {
+        this.start = start;
+    }
+
+    public SolGirasol(JLabel sol, boolean start, int px, int py) {
         super();
+        xg = px;
+        yg = py;
         this.sol = sol;
         this.start = start;
     }
@@ -27,24 +38,16 @@ public class GeneradorSol implements Runnable {
     public void run() {
         while (start) {
 
-            int x = rand.nextInt(600) + 200;
-            int y = rand.nextInt(500);
+            int x = xg ;
+            int y = yg;
 
             try {
-                Thread.sleep(13000);
+                Thread.sleep(9000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(GeneradorSol.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SolGirasol.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sol.setLocation(x, 0);
             sol.setVisible(start);
-            for (int i = 0; i < y; i++) {
-                sol.setLocation(x, i);
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(GeneradorSol.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+            sol.setLocation(x+40, y+50);
 
 //            System.out.println("x" + x);
 //            System.out.println("y" + y);

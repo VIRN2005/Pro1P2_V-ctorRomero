@@ -59,13 +59,13 @@ public class RevisaLinea extends Thread {
                 Plants planta = plants;
                 if (planta != null) {
 
-                    if (planta.getGm() == null && planta.getHealth() > 0) {
+                    if (planta.getGm() == null && planta.getHealth() > 0 && planta.getNombre().contains("Lanza guisante")) {
                         try {
                             Thread.sleep(2100);
                         } catch (Exception e) {
 
                         }
-                        if (!juego.zombie1.isEmpty()) {
+                        if (!juego.zombie1.isEmpty() ) {
                             planta.spot.setVisible(true);
                             //System.out.println("Crear disparo: " + planta.getCas().getX() + " , " + planta.getCas().getY());
                             planta.setGm(new DisparoLanzaguisantes(planta.spot, planta.getCas(), planta.getCas().getX(), planta.getCas().getY()));
@@ -80,7 +80,7 @@ public class RevisaLinea extends Thread {
                             }
                         }
                     }
-                    if (planta.getGm() != null) {
+                    if (planta.getGm() != null ) {
                         //System.out.println("Planta X:" + planta.getGm().getLabel().getX() + " ,Zombie X: " + juego.zombie1.get(0).getZombie().getX());
 
                         if (planta.getGm().getLabel().getX() - 60 >= juego.zombie1.get(0).getZombie().getX() && planta.getGm().isFlag()) {
@@ -122,7 +122,7 @@ public class RevisaLinea extends Thread {
                 Plants planta = plants;
                 if (planta != null) {
 
-                    if (planta.getGm() == null && planta.getHealth() > 0) {
+                    if (planta.getGm() == null && planta.getHealth() > 0 && planta.getNombre().contains("Lanza guisante")) {
                         try {
                             Thread.sleep(2100);
                         } catch (Exception e) {
@@ -185,7 +185,7 @@ public class RevisaLinea extends Thread {
                 Plants planta = plants;
                 if (planta != null) {
 
-                    if (planta.getGm() == null && planta.getHealth() > 0) {
+                    if (planta.getGm() == null && planta.getHealth() > 0 && planta.getNombre().contains("Lanza guisante")) {
                         try {
                             Thread.sleep(2100);
                         } catch (Exception e) {
@@ -248,7 +248,7 @@ public class RevisaLinea extends Thread {
                 Plants planta = plants;
                 if (planta != null) {
 
-                    if (planta.getGm() == null && planta.getHealth() > 0) {
+                    if (planta.getGm() == null && planta.getHealth() > 0 && planta.getNombre().contains("Lanza guisante")) {
                         try {
                             Thread.sleep(2100);
                         } catch (Exception e) {
@@ -311,7 +311,7 @@ public class RevisaLinea extends Thread {
                 Plants planta = plants;
                 if (planta != null) {
 
-                    if (planta.getGm() == null && planta.getHealth() > 0) {
+                    if (planta.getGm() == null && planta.getHealth() > 0 && planta.getNombre().contains("Lanza guisante")) {
                         try {
                             Thread.sleep(2100);
                         } catch (Exception e) {

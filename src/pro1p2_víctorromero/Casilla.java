@@ -71,7 +71,7 @@ public class Casilla extends JLabel {
                 case GIRASOL -> {
                     this.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Girasol (1).gif")));
                     plantaenCasilla = Juego.TipoPlanta.GIRASOL;
-                    gameBoard.gameplay.creanGirasol();
+                    gameBoard.gameplay.creanGirasol(this);
                     gameBoard.Panel_Lanzaguisantes2.setBorder(null);
                 }
                 case CHERRYBOMB -> {

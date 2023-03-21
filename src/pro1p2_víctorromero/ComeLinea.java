@@ -62,9 +62,9 @@ public class ComeLinea extends Thread {
                         for (Plants planta : juego.plantas1) {
                             //System.out.println("Planta X:" + planta.getGm().getLabel().getX() + " ,Zombie X: " + juego.zombie1.get(0).getZombie().getX());
 
-                            System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                            //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
                             if (zombie.getZombie().getX() <= planta.getCas().getX()) {
-                                System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                              //  System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
                                 zombie.getMover().setAtacando(true);
                                 planta.receiveDamage(zombie.attackPower);
                                 try {
@@ -92,15 +92,155 @@ public class ComeLinea extends Thread {
     }
 
     private void linea2() {
+        try {
+            if (!juego.plantas2.isEmpty()) {
+                Zombies zombie = zombiesg;
+                if (zombie != null) {
+                    if (!juego.plantas2.isEmpty()) {
+                        for (Plants planta : juego.plantas2) {
+                            //System.out.println("Planta X:" + planta.getGm().getLabel().getX() + " ,Zombie X: " + juego.zombie1.get(0).getZombie().getX());
+
+                            //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                            if (zombie.getZombie().getX() <= planta.getCas().getX()) {
+                               // System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                                zombie.getMover().setAtacando(true);
+                                planta.receiveDamage(zombie.attackPower);
+                                try {
+                                    Thread.sleep(2000);
+                                } catch (Exception e) {
+
+                                }
+                                if (planta.health <= 0) {
+                                    zombie.getMover().setAtacando(false);
+                                    planta.destruir();
+                                    juego.plantas2.remove(planta);
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        } catch (Exception e) {
+        }
+    juego.getAventura().repaint();
+
     }
 
     private void linea3() {
+        try {
+            if (!juego.plantas3.isEmpty()) {
+                Zombies zombie = zombiesg;
+                if (zombie != null) {
+                    if (!juego.plantas3.isEmpty()) {
+                        for (Plants planta : juego.plantas3) {
+                            //System.out.println("Planta X:" + planta.getGm().getLabel().getX() + " ,Zombie X: " + juego.zombie1.get(0).getZombie().getX());
+
+                            //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                            if (zombie.getZombie().getX() <= planta.getCas().getX()) {
+                                //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                                zombie.getMover().setAtacando(true);
+                                planta.receiveDamage(zombie.attackPower);
+                                try {
+                                    Thread.sleep(2000);
+                                } catch (Exception e) {
+
+                                }
+                                if (planta.health <= 0) {
+                                    zombie.getMover().setAtacando(false);
+                                    planta.destruir();
+                                    juego.plantas3.remove(planta);
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        } catch (Exception e) {
+        }
+    juego.getAventura().repaint();
+        
     }
 
     private void linea4() {
+        try {
+            if (!juego.plantas4.isEmpty()) {
+                Zombies zombie = zombiesg;
+                if (zombie != null) {
+                    if (!juego.plantas4.isEmpty()) {
+                        for (Plants planta : juego.plantas4) {
+                            //System.out.println("Planta X:" + planta.getGm().getLabel().getX() + " ,Zombie X: " + juego.zombie1.get(0).getZombie().getX());
+
+                            //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                            if (zombie.getZombie().getX() <= planta.getCas().getX()) {
+                                //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                                zombie.getMover().setAtacando(true);
+                                planta.receiveDamage(zombie.attackPower);
+                                try {
+                                    Thread.sleep(2000);
+                                } catch (Exception e) {
+
+                                }
+                                if (planta.health <= 0) {
+                                    zombie.getMover().setAtacando(false);
+                                    planta.destruir();
+                                    juego.plantas4.remove(planta);
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        } catch (Exception e) {
+        }
+    juego.getAventura().repaint();
+
     }
 
     private void linea5() {
+        try {
+            if (!juego.plantas5.isEmpty()) {
+                Zombies zombie = zombiesg;
+                if (zombie != null) {
+                    if (!juego.plantas5.isEmpty()) {
+                        for (Plants planta : juego.plantas5) {
+                            //System.out.println("Planta X:" + planta.getGm().getLabel().getX() + " ,Zombie X: " + juego.zombie1.get(0).getZombie().getX());
+
+                            //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                            if (zombie.getZombie().getX() <= planta.getCas().getX()) {
+                                //System.out.println("Zombie X: " + zombie.getZombie().getX() + " , Planta X:" + planta.getCas().getX());
+                                zombie.getMover().setAtacando(true);
+                                planta.receiveDamage(zombie.attackPower);
+                                try {
+                                    Thread.sleep(2000);
+                                } catch (Exception e) {
+
+                                }
+                                if (planta.health <= 0) {
+                                    zombie.getMover().setAtacando(false);
+                                    planta.destruir();
+                                    juego.plantas5.remove(planta);
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        } catch (Exception e) {
+        }
+    juego.getAventura().repaint();
+        
     }
 
 }

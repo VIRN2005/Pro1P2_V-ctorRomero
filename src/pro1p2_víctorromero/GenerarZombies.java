@@ -18,11 +18,11 @@ public class GenerarZombies extends Thread {
     private int last;
 
     private boolean flag;
-    private int numZombiesNormal = 10;
+    private int numZombiesNormal = 1;
     private int numZombiesCono = 6;
     private int numZombiesNormalOrda = 6;
     private int numZombiesConoOrda = 4;
-    private int coutZombiesNormal = 10;
+    private int coutZombiesNormal = 1;
     private int coutZombiesCono = 6;
     private int coutZombiesNormalOrda = 6;
     private int coutZombiesConoOrda = 4;

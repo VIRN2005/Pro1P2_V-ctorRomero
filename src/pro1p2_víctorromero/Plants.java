@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public abstract class Plants extends Thread implements Serializable {
 
-    protected String name;
+    protected String nombre;
     protected int sunCost;
     protected int health;
     protected int attackPower;
@@ -34,11 +34,11 @@ public abstract class Plants extends Thread implements Serializable {
     public Plants() {
     }
 
-    public Plants(Intro intr, Casilla ca, String name, int sunCost, int health, int attackPower, int costoSoles, int li) {
+    public Plants(Intro intr, Casilla ca, String lname, int sunCost, int health, int attackPower, int costoSoles, int li) {
         this.intro = intr;
         cas = ca;
         ycord = li;
-        this.name = name;
+        this.nombre = lname;
         this.sunCost = sunCost;
         this.health = health;
         this.attackPower = attackPower;
@@ -46,8 +46,8 @@ public abstract class Plants extends Thread implements Serializable {
         revisar();
     }
 
-    public Plants(String name, int sunCost, int health, int attackPower, JPanel panel, int CostoSoles) {
-        this.name = name;
+    public Plants(String lname, int sunCost, int health, int attackPower, JPanel panel, int CostoSoles) {
+        this.nombre = lname;
         this.sunCost = sunCost;
         this.health = health;
         this.attackPower = attackPower;
@@ -63,9 +63,6 @@ public abstract class Plants extends Thread implements Serializable {
         this.gm = gm;
     }
 
-    public String getName1() {
-        return name;
-    }
 
     public Intro getIntro() {
         return intro;
@@ -83,9 +80,14 @@ public abstract class Plants extends Thread implements Serializable {
         this.cas = cas;
     }
 
-    public void setName1(String name) {
-        this.name = name;
+    public String getNombre() {
+        return nombre;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 
     public int getSunCost() {
         return sunCost;
@@ -137,7 +139,7 @@ public abstract class Plants extends Thread implements Serializable {
 
     @Override
     public String toString() {
-        return "Plants{" + "name=" + name + "\n"
+        return "Plants{" + "name=" + nombre + "\n"
                 + "sunCost=" + sunCost + "\n"
                 + "health=" + health + "\n"
                 + "attackPower=" + attackPower + '}';
@@ -145,14 +147,14 @@ public abstract class Plants extends Thread implements Serializable {
 
     public void attackZombie(Zombies zombie) {
         zombie.receiveDamage(this.attackPower);
-        System.out.println(this.name + " ha atacado a " + zombie.getName() + " por " + this.attackPower + " puntos de daño.");
+        System.out.println(this.nombre + " ha atacado a " + zombie.getName() + " por " + this.attackPower + " puntos de daño.");
     }
 
     public void receiveDamage(int damage) {
         this.health -= damage;
-        System.out.println(this.name + " ha recibido " + damage + " puntos de daño.");
+        System.out.println(this.nombre + " ha recibido " + damage + " puntos de daño.");
         if (this.health <= 0) {
-            System.out.println(this.name + " ha muerto.");
+            System.out.println(this.nombre + " ha muerto.");
             //run();
         }
     }
@@ -187,6 +189,7 @@ public abstract class Plants extends Thread implements Serializable {
     }
 
     private void revisar() {
+        System.out.println("pro1p2_víctorromero.Plants.revisar():"+ycord); 
         if (intro.getGameplay().getLines() == 5) {
             int lin = 0;
             switch (ycord) {

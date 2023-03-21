@@ -94,10 +94,19 @@ public class Juego {
         setCantSoles(soles);
         aventura.jTextField2.setText(soles + "");
 
-        aventura.Sol1.setIcon(null);
+        //aventura.Sol1.setIcon(null);
+        aventura.Sol1.setVisible(false);
         VerifPlants();
     }
+    public void clickSolp(JLabel s) {
+        int soles = getCantSoles();
+        soles += 25;
+        setCantSoles(soles);
+        aventura.jTextField2.setText(soles + "");
 
+        //s.setIcon(null);
+        VerifPlants();
+    }
     public void creanLanzaguisantes(Casilla ca) {
         int soles = getCantSoles();
         soles -= 100;
@@ -121,11 +130,26 @@ public class Juego {
 
     }
 
-    public void creanGirasol() {
+    public void creanGirasol(Casilla ca) {
         int soles = getCantSoles();
         soles -= 50;
         setCantSoles(soles);
         VerifPlants();
+        Girasol girasol = new Girasol(aventura, ca, "Girasol", 100, 125, 25,ca.getY());
+        switch (ca.getY()) {
+            case 60 ->
+                plantas1.add(girasol);
+            case 160 ->
+                plantas2.add(girasol);
+            case 260 ->
+                plantas3.add(girasol);
+            case 360 ->
+                plantas4.add(girasol);
+            case 460 ->
+                plantas5.add(girasol);
+
+        }
+        
     }
 
     public void creanCherryBomb() {
