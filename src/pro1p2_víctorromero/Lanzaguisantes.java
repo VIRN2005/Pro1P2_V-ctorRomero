@@ -4,8 +4,8 @@ import javax.swing.JLabel;
 
 public class Lanzaguisantes extends Plants {
 
-    public Lanzaguisantes(Intro intr, Casilla ca, String name, int sunCost, int health, int attackPower) {
-        super(intr, ca, name, sunCost, health, attackPower, 25);
+    public Lanzaguisantes(Intro intr, Casilla ca, String name, int sunCost, int health, int attackPower,int li) {
+        super(intr, ca, name, sunCost, health, attackPower, 25,li);
     }
 
     public void crearSpot() {

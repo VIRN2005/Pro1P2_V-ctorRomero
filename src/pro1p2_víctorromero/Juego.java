@@ -103,7 +103,7 @@ public class Juego {
         soles -= 100;
         setCantSoles(soles);
         VerifPlants();
-        Lanzaguisantes guisante = new Lanzaguisantes(aventura, ca, "Lanza guisante", 100, 125, 25);
+        Lanzaguisantes guisante = new Lanzaguisantes(aventura, ca, "Lanza guisante", 100, 125, 25,ca.getY());
         guisante.crearSpot();
         switch (ca.getY()) {
             case 60 ->
