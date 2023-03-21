@@ -42,13 +42,18 @@ public class SolGirasol extends Thread{
             int y = yg;
 
             try {
-                Thread.sleep(9000);
+                Thread.sleep(7000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(SolGirasol.class.getName()).log(Level.SEVERE, null, ex);
             }
             sol.setVisible(start);
             sol.setLocation(x+40, y+50);
-
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SolGirasol.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sol.setVisible(false);
 //            System.out.println("x" + x);
 //            System.out.println("y" + y);
         }

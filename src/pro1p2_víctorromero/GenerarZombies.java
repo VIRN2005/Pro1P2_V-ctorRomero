@@ -18,31 +18,32 @@ public class GenerarZombies extends Thread {
     private int last;
 
     private boolean flag;
-    private int numZombiesNormal = 1;
-    private int numZombiesCono = 6;
-    private int numZombiesNormalOrda = 6;
-    private int numZombiesConoOrda = 4;
-    private int coutZombiesNormal = 1;
-    private int coutZombiesCono = 6;
+    private int numZombiesNormal = 15;
+    private int numZombiesCono = 8;
+    private int numZombiesNormalOrda = 16;
+    private int numZombiesConoOrda = 14;
+    private int coutZombiesNormal = 15;
+    private int coutZombiesCono = 8;
     private int coutZombiesNormalOrda = 6;
     private int coutZombiesConoOrda = 4;
 
     private int numMaximoZombies = 3;
-    private int tiempoEsperaMaximo = 12 * 3000;
-    private int tiempoEsperaNormal = 6 * 3000;
+    private int tiempoEsperaMaximo = 12 * 2500;
+    private int tiempoEsperaNormal = 6 * 2500;
 
+    private boolean ini;
     public GenerarZombies(Juego jgo, int lin) {
         super();
         juego = jgo;
         lineas = lin;
-        if (lin == 1) {
-            numZombiesCono = 0;
-            numZombiesNormal -= 4;
-        }
-        if (lin == 2) {
-            numZombiesCono -= 2;
-            numZombiesNormal -= 3;
-        }
+//        if (lin == 1) {
+//            numZombiesCono = 0;
+//            numZombiesNormal -= 4;
+//        }
+//        if (lin == 2) {
+//            numZombiesCono -= 2;
+//            numZombiesNormal -= 3;
+//        }
         flag = true;
     }
 
