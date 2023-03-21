@@ -27,6 +27,14 @@ public class Intro extends javax.swing.JFrame {
     private Intro Intro;
     protected Juego gameplay;
 
+    public Juego getGameplay() {
+        return gameplay;
+    }
+
+    public void setGameplay(Juego gameplay) {
+        this.gameplay = gameplay;
+    }
+
     /**
      * Creates new form Intro
      */
