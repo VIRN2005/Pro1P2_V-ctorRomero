@@ -1,5 +1,6 @@
 package pro1p2_víctorromero;
 
+import java.awt.Rectangle;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -34,7 +35,6 @@ public class CherryBomb extends Plants {
         for (Zombies z : zombies) {
             z.receiveDamage(z.getAttackPower());
             z.getZombieJl().setVisible(false);
-
         }
         this.attackPower = 0;
     }
