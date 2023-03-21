@@ -31,18 +31,19 @@ public class GenerarZombies extends Thread {
     private int tiempoEsperaMaximo = 12 * 2500;
     private int tiempoEsperaNormal = 6 * 2500;
 
+    private boolean ini;
     public GenerarZombies(Juego jgo, int lin) {
         super();
         juego = jgo;
         lineas = lin;
-        if (lin == 1) {
-            numZombiesCono = 0;
-            numZombiesNormal -= 4;
-        }
-        if (lin == 2) {
-            numZombiesCono -= 2;
-            numZombiesNormal -= 3;
-        }
+//        if (lin == 1) {
+//            numZombiesCono = 0;
+//            numZombiesNormal -= 4;
+//        }
+//        if (lin == 2) {
+//            numZombiesCono -= 2;
+//            numZombiesNormal -= 3;
+//        }
         flag = true;
     }
 
