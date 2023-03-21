@@ -8,19 +8,22 @@ public class CherryBomb extends Plants {
     private int radioExplosion;
 
     public CherryBomb() {
-        super();
     }
 
-    public CherryBomb(int x, int y, JPanel panel, JLabel spot) {
-        super();
-        this.sunCost = 150;
-        this.attackPower = 300;
-        this.radioExplosion = radioExplosion;
-        this.panel = panel;
-        this.panel = panel;
-        this.plantLabel = new JLabel();
+//    public CherryBomb() {
+//        super();
+//    }
 
-    }
+//    public CherryBomb(int x, int y, JPanel panel, JLabel spot) {
+//       // super();
+//        this.sunCost = 150;
+//        this.attackPower = 300;
+//        this.radioExplosion = radioExplosion;
+//        this.panel = panel;
+//        this.panel = panel;
+//        this.plantLabel = new JLabel();
+//
+//    }
 
     public int getRadioExplosion() {
         return radioExplosion;

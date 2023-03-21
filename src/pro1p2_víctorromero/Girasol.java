@@ -42,15 +42,15 @@ public class Girasol extends Plants {
         this.produccion = produccion;
     }
 
-    public void action(){
-        try {
-            Thread.sleep(10000);
-       
-            Random random = new Random();
-            int pos = random.nextInt(plantLabel.getWidth()) + plantLabel.getX();
-            GeneradorSol gs = new GeneradorSol();
-            gs.run();
-        } catch (InterruptedException ex) {
-        }
-    }
+//    public void action(){
+//        try {
+//            Thread.sleep(20000);
+//       
+//            Random random = new Random();
+//            int pos = random.nextInt(plantLabel.getWidth()) + plantLabel.getX();
+//            Sun sun = new Sun(produccion, pos, plantLabel.getY());
+//            sun.start();
+//        } catch (InterruptedException ex) {
+//        }
+//    }
 }
