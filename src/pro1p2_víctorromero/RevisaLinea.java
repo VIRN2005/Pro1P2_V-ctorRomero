@@ -307,7 +307,7 @@ public class RevisaLinea extends Thread {
 
     private void linea5() {
         try {
-            if (!juego.zombie1.isEmpty()) {
+            if (!juego.zombie5.isEmpty()) {
                 Plants planta = plants;
                 if (planta != null) {
 

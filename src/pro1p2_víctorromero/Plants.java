@@ -23,19 +23,21 @@ public abstract class Plants extends Thread implements Serializable {
     private Casilla cas;
     private int x;
     private int y;
+    private int ycord;
     private DisparoLanzaguisantes gm = null;
     private RevisaLinea revisaLinea1;
     private RevisaLinea revisaLinea2;
     private RevisaLinea revisaLinea3;
     private RevisaLinea revisaLinea4;
     private RevisaLinea revisaLinea5;
+
     public Plants() {
     }
 
-    public Plants(Intro intr, Casilla ca, String name, int sunCost, int health, int attackPower, int costoSoles) {
+    public Plants(Intro intr, Casilla ca, String name, int sunCost, int health, int attackPower, int costoSoles, int li) {
         this.intro = intr;
         cas = ca;
-
+        ycord = li;
         this.name = name;
         this.sunCost = sunCost;
         this.health = health;
@@ -186,16 +188,40 @@ public abstract class Plants extends Thread implements Serializable {
 
     private void revisar() {
         if (intro.getGameplay().getLines() == 5) {
-            revisaLinea1 = new RevisaLinea(intro.getGameplay(),this,1);
-            revisaLinea2 = new RevisaLinea(intro.getGameplay(),this, 2);
-            revisaLinea3 = new RevisaLinea(intro.getGameplay(),this, 3);
-            revisaLinea4 = new RevisaLinea(intro.getGameplay(),this, 4);
-            revisaLinea5 = new RevisaLinea(intro.getGameplay(),this, 5);
-            revisaLinea1.start();
-            revisaLinea2.start();
-            revisaLinea3.start();
-            revisaLinea4.start();
-            revisaLinea5.start();            
+            int lin = 0;
+            switch (ycord) {
+                case 60 ->
+                    lin = 1;
+                case 160 ->
+                    lin = 2;
+                case 260 ->
+                    lin = 3;
+                case 360 ->
+                    lin = 4;
+                case 460 ->
+                    lin = 5;
+
+            }
+            if (lin == 1) {
+                revisaLinea1 = new RevisaLinea(intro.getGameplay(), this, 1);
+                revisaLinea1.start();
+            }
+            if (lin == 2) {
+                revisaLinea2 = new RevisaLinea(intro.getGameplay(), this, 2);
+                revisaLinea2.start();
+            }
+            if (lin == 3) {
+                revisaLinea3 = new RevisaLinea(intro.getGameplay(), this, 3);
+                revisaLinea3.start();
+            }
+            if (lin == 4) {
+                revisaLinea4 = new RevisaLinea(intro.getGameplay(), this, 4);
+                revisaLinea4.start();
+            }
+            if (lin == 5) {
+                revisaLinea5 = new RevisaLinea(intro.getGameplay(), this, 5);
+                revisaLinea5.start();
+            }
         }
     }
 }
