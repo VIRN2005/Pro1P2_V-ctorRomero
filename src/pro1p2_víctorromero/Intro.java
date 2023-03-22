@@ -17,6 +17,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
@@ -26,6 +27,9 @@ public class Intro extends javax.swing.JFrame {
 
     private Intro Intro;
     protected Juego gameplay;
+    protected Juego_Survival gameplay2;
+    protected Juego_Tutorial gameplay3;
+    private Timer time;
 
     public Juego getGameplay() {
         return gameplay;
@@ -83,6 +87,9 @@ public class Intro extends javax.swing.JFrame {
         Adventure_Game = new javax.swing.JFrame();
         Pause1 = new javax.swing.JButton();
         Sol1 = new javax.swing.JLabel();
+        PanelProgressBar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        Pb_Adventure = new javax.swing.JProgressBar();
         PanelSup_Plants1 = new javax.swing.JPanel();
         Panel_Lanzaguisantes3 = new javax.swing.JLabel();
         Panel_Lanzaguisantes2 = new javax.swing.JLabel();
@@ -163,6 +170,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Background = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         Survival_Game = new javax.swing.JFrame();
+        Sol2 = new javax.swing.JLabel();
         LG16 = new Casilla(this);
         LG40 = new Casilla(this);
         LG60 = new Casilla(this);
@@ -191,7 +199,7 @@ public class Intro extends javax.swing.JFrame {
         LG93 = new Casilla(this);
         LG95 = new Casilla(this);
         LG105 = new Casilla(this);
-        jLabel12 = new javax.swing.JLabel();
+        Sol3 = new javax.swing.JLabel();
         SunBoard2 = new javax.swing.JPanel();
         jTextField3 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -200,7 +208,6 @@ public class Intro extends javax.swing.JFrame {
         PanelSup_Plants2 = new javax.swing.JPanel();
         Panel_Lanzaguisantes5 = new javax.swing.JLabel();
         Panel_Lanzaguisantes6 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         PanelInf_Plants2 = new javax.swing.JPanel();
         Pause2 = new javax.swing.JButton();
         Adventure_Background2 = new javax.swing.JLabel();
@@ -218,6 +225,11 @@ public class Intro extends javax.swing.JFrame {
         ResumeGame2 = new javax.swing.JButton();
         SaveandLeave2 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
+        Horda = new javax.swing.JDialog();
+        jLabel9 = new javax.swing.JLabel();
+        NivelCompleted = new javax.swing.JFrame();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         cb_users = new javax.swing.JComboBox<>();
         NewPlayer = new javax.swing.JButton();
         VR_Presents = new javax.swing.JLabel();
@@ -370,6 +382,14 @@ public class Intro extends javax.swing.JFrame {
             }
         });
         Adventure_Game.getContentPane().add(Sol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
+
+        PanelProgressBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/zombieHead.png"))); // NOI18N
+        PanelProgressBar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 20, 20));
+        PanelProgressBar.add(Pb_Adventure, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 5, 190, 10));
+
+        Adventure_Game.getContentPane().add(PanelProgressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 560, 210, 20));
 
         PanelSup_Plants1.setBackground(new java.awt.Color(55, 47, 0));
         PanelSup_Plants1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -542,7 +562,6 @@ public class Intro extends javax.swing.JFrame {
         Panel_Lanzaguisantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Panel_Lanzaguisantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Tarjeta_lanzaguisantes.png"))); // NOI18N
         Panel_Lanzaguisantes.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        Panel_Lanzaguisantes.setEnabled(false);
         Panel_Lanzaguisantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Panel_LanzaguisantesMouseClicked(evt);
@@ -579,6 +598,16 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 110, 110));
 
         Survival_Game.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Sol2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Sol2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Sun2.png"))); // NOI18N
+        Sol2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Sol2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Sol2MouseClicked(evt);
+            }
+        });
+        Survival_Game.getContentPane().add(Sol2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
         Survival_Game.getContentPane().add(LG16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 120, 130));
 
         LG40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -610,9 +639,9 @@ public class Intro extends javax.swing.JFrame {
         Survival_Game.getContentPane().add(LG95, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 120, 130));
         Survival_Game.getContentPane().add(LG105, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 360, 120, 130));
 
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Sun2.png"))); // NOI18N
-        Survival_Game.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
+        Sol3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Sol3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Sun2.png"))); // NOI18N
+        Survival_Game.getContentPane().add(Sol3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, 100));
 
         SunBoard2.setBackground(new java.awt.Color(55, 47, 0));
         SunBoard2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -642,20 +671,9 @@ public class Intro extends javax.swing.JFrame {
         Panel_Lanzaguisantes5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Panel_Lanzaguisantes5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Tarjeta_lanzaguisantes.png"))); // NOI18N
         Panel_Lanzaguisantes5.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        Panel_Lanzaguisantes5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes5MouseDragged(evt);
-            }
-        });
         Panel_Lanzaguisantes5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Panel_Lanzaguisantes5MouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes5MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Panel_Lanzaguisantes5MouseReleased(evt);
             }
         });
         PanelSup_Plants2.add(Panel_Lanzaguisantes5);
@@ -680,7 +698,6 @@ public class Intro extends javax.swing.JFrame {
             }
         });
         PanelSup_Plants2.add(Panel_Lanzaguisantes6);
-        PanelSup_Plants2.add(jPanel1);
 
         Survival_Game.getContentPane().add(PanelSup_Plants2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 100, 500));
 
@@ -810,6 +827,27 @@ public class Intro extends javax.swing.JFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pause (SIN Fondo).png"))); // NOI18N
         Pause_Screen_SURVIVAL.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
 
+        Horda.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/finalWave.png"))); // NOI18N
+        Horda.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 400, 160));
+
+        NivelCompleted.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(39, 62, 84));
+        jButton1.setFont(new java.awt.Font("Ghostphobia", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 255, 0));
+        jButton1.setText("REGRESAR AL MAIN MENU");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        NivelCompleted.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 340, 30));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/LevelCompleted.png"))); // NOI18N
+        NivelCompleted.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 637, 408));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plants vs Zombies (VR Edition)");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -865,7 +903,7 @@ public class Intro extends javax.swing.JFrame {
         if (cb_users.getSelectedItem() != null) {
             usuario = (User) cb_users.getSelectedItem();
             lb_name.setText(usuario.getNombre());
-            String path = "./src/pro1p2_víctorromero/" + usuario.getNombre() + ".virn";
+            String path = "./src/" + usuario.getNombre() + ".virn";
             administrador = new Administrador(path);
             try {
                 administrador.load();
@@ -919,6 +957,7 @@ public class Intro extends javax.swing.JFrame {
         Tutorial_Game.setVisible(true);
         Tutorial_Game.pack();
         Tutorial_Game.setLocationRelativeTo(this);
+        gameplay3 = new Juego_Tutorial(this);
     }//GEN-LAST:event_TutorialMouseClicked
 
     private void AdventureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdventureMouseClicked
@@ -927,15 +966,16 @@ public class Intro extends javax.swing.JFrame {
         Adventure_Game.pack();
         Adventure_Game.setLocationRelativeTo(this);
         gameplay = new Juego(this);
+        pb = new ProgressBar(Pb_Adventure, jLabel5, PanelProgressBar);
+        pb.start();
 
+        NivelCompleted.setVisible(true);
+        NivelCompleted.pack();
+        NivelCompleted.setLocationRelativeTo(null);
     }//GEN-LAST:event_AdventureMouseClicked
 
     private void SolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SolMouseClicked
-        cantSoles += 25;
-        jLabel1.setText(cantSoles + "");
-
-        Sol.setVisible(false);
-        VerifPlants();
+        gameplay3.clickSol();
     }//GEN-LAST:event_SolMouseClicked
 
     private void PauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PauseActionPerformed
@@ -948,7 +988,7 @@ public class Intro extends javax.swing.JFrame {
         Pause_Screen_TUTORIAL.setLocationRelativeTo(this);
 
 //        gm.suspend();
-//        t2.suspend();
+        t2.suspend();
 //        mz.suspend();
     }//GEN-LAST:event_PauseMouseClicked
 
@@ -994,18 +1034,6 @@ public class Intro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_NewPlayerMouseClicked
 
-    private void Panel_Lanzaguisantes5MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes5MouseDragged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes5MouseDragged
-
-    private void Panel_Lanzaguisantes5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes5MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes5MousePressed
-
-    private void Panel_Lanzaguisantes5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes5MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Panel_Lanzaguisantes5MouseReleased
-
     private void Panel_Lanzaguisantes6MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes6MouseDragged
         // TODO add your handling code here:
     }//GEN-LAST:event_Panel_Lanzaguisantes6MouseDragged
@@ -1048,7 +1076,12 @@ public class Intro extends javax.swing.JFrame {
         Pause_Screen_ADVENTURE.pack();
         Adventure_Game.setVisible(false);
 
-        //Falta STOP THREADS
+//        try {
+//            //Falta STOP THREADS
+//            gameplay.t2.wait();
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(Intro.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         Main_Screen.setVisible(true);
         Main_Screen.setLocationRelativeTo(this);
         Main_Screen.pack();
@@ -1100,6 +1133,7 @@ public class Intro extends javax.swing.JFrame {
         Survival_Game.setVisible(true);
         Survival_Game.pack();
         Survival_Game.setLocationRelativeTo(this);
+//        gameplay2 = new Juego_Survival(this);
     }//GEN-LAST:event_SurvivalMouseClicked
 
     private void Sol1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sol1MouseClicked
@@ -1122,18 +1156,26 @@ public class Intro extends javax.swing.JFrame {
 
     private void Panel_Lanzaguisantes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes5MouseClicked
         Panel_Lanzaguisantes5.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.blue));
-        gameplay.plantar = Juego.TipoPlanta.GUISANTE;
+        gameplay2.plantar = Juego_Survival.TipoPlanta.GUISANTE;
     }//GEN-LAST:event_Panel_Lanzaguisantes5MouseClicked
 
     private void Panel_Lanzaguisantes6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Lanzaguisantes6MouseClicked
         Panel_Lanzaguisantes6.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.blue));
-        gameplay.plantar = Juego.TipoPlanta.GIRASOL;
+        gameplay2.plantar = Juego_Survival.TipoPlanta.GIRASOL;
     }//GEN-LAST:event_Panel_Lanzaguisantes6MouseClicked
 
     private void Panel_LanzaguisantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_LanzaguisantesMouseClicked
         Panel_Lanzaguisantes.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.blue));
-        gameplay.plantar = Juego.TipoPlanta.GUISANTE;
+        gameplay3.plantar = Juego_Tutorial.TipoPlanta.GUISANTE;
     }//GEN-LAST:event_Panel_LanzaguisantesMouseClicked
+
+    private void Sol2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sol2MouseClicked
+        gameplay.clickSol();
+    }//GEN-LAST:event_Sol2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        Main_Screen.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1229,6 +1271,9 @@ public class Intro extends javax.swing.JFrame {
     private Administrador administrador;
     private User usuario;
 
+    //Progress Bar
+    ProgressBar pb;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Adventure;
     private javax.swing.JLabel Adventure_Background1;
@@ -1240,6 +1285,7 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel Exit;
     private javax.swing.JLabel GamePlay;
     private javax.swing.JLabel Girasol;
+    private javax.swing.JDialog Horda;
     public javax.swing.JLabel LG1;
     public javax.swing.JLabel LG10;
     public javax.swing.JLabel LG105;
@@ -1329,9 +1375,11 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel MainScreen;
     private javax.swing.JFrame Main_Screen;
     private javax.swing.JButton NewPlayer;
+    private javax.swing.JFrame NivelCompleted;
     private javax.swing.JPanel PanelInf_Plants;
     private javax.swing.JPanel PanelInf_Plants1;
     private javax.swing.JPanel PanelInf_Plants2;
+    private javax.swing.JPanel PanelProgressBar;
     private javax.swing.JPanel PanelSup_Plants;
     private javax.swing.JPanel PanelSup_Plants1;
     private javax.swing.JPanel PanelSup_Plants2;
@@ -1339,8 +1387,8 @@ public class Intro extends javax.swing.JFrame {
     public javax.swing.JLabel Panel_Lanzaguisantes2;
     public javax.swing.JLabel Panel_Lanzaguisantes3;
     public javax.swing.JLabel Panel_Lanzaguisantes4;
-    private javax.swing.JLabel Panel_Lanzaguisantes5;
-    private javax.swing.JLabel Panel_Lanzaguisantes6;
+    public javax.swing.JLabel Panel_Lanzaguisantes5;
+    public javax.swing.JLabel Panel_Lanzaguisantes6;
     private javax.swing.JLabel Pantalla;
     private javax.swing.JButton Pause;
     private javax.swing.JButton Pause1;
@@ -1348,6 +1396,7 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JFrame Pause_Screen_ADVENTURE;
     private javax.swing.JFrame Pause_Screen_SURVIVAL;
     private javax.swing.JFrame Pause_Screen_TUTORIAL;
+    private javax.swing.JProgressBar Pb_Adventure;
     private javax.swing.JLabel Presents;
     private javax.swing.JLabel PresentsBlack;
     private javax.swing.JLabel Press;
@@ -1362,6 +1411,8 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JButton SaveandLeave2;
     public javax.swing.JLabel Sol;
     public javax.swing.JLabel Sol1;
+    public javax.swing.JLabel Sol2;
+    private javax.swing.JLabel Sol3;
     private javax.swing.JPanel SunBoard;
     private javax.swing.JPanel SunBoard1;
     private javax.swing.JPanel SunBoard2;
@@ -1376,8 +1427,9 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel VR_Presents;
     private javax.swing.JLabel VR_PresentsBlack;
     private javax.swing.JComboBox<String> cb_users;
+    private javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1388,12 +1440,13 @@ public class Intro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel9;
     public javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lb_name;
     // End of variables declaration//GEN-END:variables
 

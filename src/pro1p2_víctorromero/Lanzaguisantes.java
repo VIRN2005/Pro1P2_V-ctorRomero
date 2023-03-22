@@ -14,7 +14,7 @@ public class Lanzaguisantes extends Plants {
         spot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro1p2_víctorromero/Images/Pea.png")));
         getIntro().Adventure_Game.getContentPane().add(spot, new org.netbeans.lib.awtextra.AbsoluteConstraints(getCas().getX(), getCas().getY(), 50, -1), 1);
         //setGm(new DisparoLanzaguisantes(spot, getCas(), getCas().getX(), getCas().getY()));
-
+     
     }
 
 }

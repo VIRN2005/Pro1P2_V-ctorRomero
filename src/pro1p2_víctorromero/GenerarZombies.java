@@ -5,6 +5,7 @@
 package pro1p2_víctorromero;
 
 import java.util.Random;
+import javax.swing.JLabel;
 
 /**
  *
@@ -16,22 +17,24 @@ public class GenerarZombies extends Thread {
     private int lineas;
     private int linea;
     private int last;
+    private JLabel horda;
 
     private boolean flag;
-    private int numZombiesNormal = 15;
-    private int numZombiesCono = 8;
-    private int numZombiesNormalOrda = 16;
-    private int numZombiesConoOrda = 14;
-    private int coutZombiesNormal = 15;
-    private int coutZombiesCono = 8;
-    private int coutZombiesNormalOrda = 6;
-    private int coutZombiesConoOrda = 4;
+    private int numZombiesNormal = 10;
+    private int numZombiesCono = 3;
+    private int numZombiesNormalOrda = 10;
+    private int numZombiesConoOrda = 5;
+    private int coutZombiesNormal = 10;
+    private int coutZombiesCono = 3;
+    private int coutZombiesNormalOrda = 10;
+    private int coutZombiesConoOrda = 5;
 
     private int numMaximoZombies = 3;
     private int tiempoEsperaMaximo = 12 * 2500;
     private int tiempoEsperaNormal = 6 * 2500;
 
     private boolean ini;
+
     public GenerarZombies(Juego jgo, int lin) {
         super();
         juego = jgo;
@@ -61,7 +64,8 @@ public class GenerarZombies extends Thread {
             } catch (Exception e) {
 
             }
-            System.out.println("Restantes: " + numZombiesNormal + numZombiesCono);
+
+            System.out.println("Restantes: " + numZombiesNormal + " " + numZombiesCono);
             if (numZombiesNormal + numZombiesCono > 0) {
                 if (numZombiesNormal == 0) {
                     GenerarZombieCono();
